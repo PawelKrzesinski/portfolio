@@ -1,0 +1,164 @@
+@media only screen and (min-width: 300px){
+	.section-5 label {
+		text-align: start;
+		padding-top: 10px;
+		position: absolute;
+		z-index: 0;
+		height: 50px;
+		width: 260px;
+		transition: all .2s linear;
+		background-color: transparent;
+	}
+	.section-5 form input{
+		position: relative;
+		display: inline-block;
+		width: 260px;
+		height: 50px;
+		font-size: 18px;
+		background-color: transparent;		
+		outline: none;
+		border: none;
+		transition: all .15s linear;
+		z-index: 1;
+		border-bottom: 1px solid darkgray;
+	}
+	.section-5 form textarea {
+		background-color: transparent;
+		height: 50px;
+		border: none;
+		resize: none;	
+		outline: none;
+		font-size: 18px;
+		z-index: 1;
+		border-bottom: 1px solid darkgray;
+		transition: all .15s linear;
+	}
+	.animateInputBorder {
+		position: absolute;
+		bottom: 0;
+		width: 260px;
+		height: 0 !important;
+		border-bottom: solid 3px #00d8ff;  
+		transform: scaleX(0);
+		transition: transform 250ms ease-in-out;
+	}
+	.section-5 form textarea:focus, .section-5 form input:focus{
+		border: none;
+	}
+	.section-5 form textarea:focus{
+		height: 150px;
+	}
+
+	.section-5 form input:focus ~ .animateInputBorder,
+	.section-5 form textarea:focus ~ .animateInputBorder{
+		transform: scaleX(1);
+	}
+	.section-5 form input::placeholder, .section-5 form textarea::placeholder{
+		color: transparent;
+	}
+	.section-5 form input:focus ~ label,
+	.section-5 form input:not(:placeholder-shown) ~ label{
+		padding: 0;
+		transform: translateY(-25px);
+		font-size: 14px;
+	}
+
+	.section-5 form textarea:focus ~ label,
+	.section-5 form textarea:not(:placeholder-shown) ~ label{
+		padding: 0;
+		transform: translateY(-30px);
+		font-size: 14px;
+		height: 150px !important;
+	}
+	.section-5 form textarea:not(:placeholder-shown){
+		height: 150px !important;
+	}
+	.section-5 form textarea:not(:focus) ~ label{
+		height: 50px !important;
+	}
+	#contact-form > div:nth-child(5) > label{
+		height: 50px;
+	}
+	.section-5 form textarea:focus ~ #contact-form > div:nth-child(5) > label{
+		height: 150px !important;
+	}
+	.spinner{
+		width: 75px;
+		display: none;
+	}
+	#submit {
+		background-color: #00d8ff;
+		width: 260px;
+		border: 1px solid transparent;
+		border-radius: 25px/25px;
+		padding: 10px;
+		font-size: 20px;
+		cursor: pointer;
+	}
+	#submit:active {
+		color: #00d8ff;
+		background-color: transparent;
+		border: 1px solid #00d8ff !important;
+		outline: none;
+	}
+	.section-5 p{
+		margin-top: 20px;
+	}
+}
+
+@media only screen and (min-width: 1024px){
+	#submit:hover{
+		background-color: transparent;
+		color: #00d8ff;
+		letter-spacing: 2px;
+		transition: all .3s linear;
+		border: 1px solid #00d8ff;
+	}
+}
+
+@media only screen and (min-width: 4000px){
+	.section-5 label{
+		font-size: 50px;
+		white-space: nowrap;
+	}
+	.section-5 form input{
+		height: 100px;
+		width: 400px;
+		font-size: 50px;
+	}
+	.section-5 form input:focus ~ label,
+	.section-5 form input:not(:placeholder-shown) ~ label{
+		font-size: 25px;
+	}
+	.section-5 form textarea:focus ~ label,
+	.section-5 form textarea:not(:placeholder-shown) ~ label{
+		transform: translateY(-35px);
+		font-size: 25px;
+		height: 300px !important;
+	}
+
+	.section-5 form textarea{
+		height: 100px;
+		width: 400px;
+		font-size: 50px;
+	}
+	.section-5 form textarea:focus{
+		height: 300px !important;
+	}
+	.section-5 form textarea:focus ~ #contact-form > div:nth-child(5) > label{
+		height: 300px !important;
+	}
+	.animateInputBorder{
+		width: 400px;
+	}
+	.section-5 p{
+		margin-top: 100px;
+		font-size: 50px;
+	}
+	#submit{
+		margin-top: 50px;
+		width: 400px;
+		font-size: 50px;
+		z-index: 100;
+	}
+}

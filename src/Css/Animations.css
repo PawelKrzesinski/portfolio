@@ -1,0 +1,58 @@
+@keyframes slide-in{
+	0%{
+		transform: translate(20%, 15%);
+		opacity: 0;
+	}
+	20%{
+		transform: translate(20%, 15%);
+		opacity: 0;
+	}
+	35%{
+		transform: translate(20%, 0%);
+		opacity: 0.1;
+	}
+	100%{
+		transform: translate(0%, 0%);
+		opacity: 1;
+	}
+}
+
+@keyframes reveal {
+	0% {
+		opacity: 0;
+		letter-spacing: 5px;
+	}
+	30% {
+		opacity: 0;
+		letter-spacing: 5px;
+	}
+
+	100%{
+		opacity: 1;
+		letter-spacing: 2px;
+	}
+}
+
+@keyframes shine {
+	0% {
+	  background-position: -500%; 
+	}
+	100% {
+	  background-position: 500%;
+	}
+}
+@keyframes reverseShine {
+	0% {
+	  background-position: 500%;
+	  
+	}
+	100% {
+	  background-position: -500%;
+	}
+}
+
+@keyframes mozGlow {
+	0%{
+		text-shadow: 0 0 5px antiquewhite, 0 0 8px  antiquewhite;
+	}
+}
