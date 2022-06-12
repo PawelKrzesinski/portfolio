@@ -62,8 +62,8 @@ export default function SectionAbout(){
 					I am looking for something part-time, that I could work on in the evenings and on weekends.
 					Looking forward to hearing from you.
 				</h2>
-				<div className='get-in-touch-container'>
-					<a className='get-in-touch-btn' href="#contact" style={textColor}>Contact Me</a>
+				<div className='contact-me-container'>
+					<a className='contact-me-btn' href="#contact" style={textColor}>Contact Me</a>
 				</div>
 				</MotionAnimate>
 			</div>

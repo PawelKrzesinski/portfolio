@@ -16,13 +16,17 @@ const projectCard = (props) => {
 							className="project-live" 
 							style={props.projectLinks}  
 							target='_blank' 
-							rel='noopener noreferrer'>Project live
+							rel='noopener noreferrer'
+							>
+								Project live
 							</a>
 							<a href={props.project.github} 
 							className="project-sourceCode" 
 							style={props.projectLinks}  
 							target='_blank' 
-							rel='noopener noreferrer'>Source Code
+							rel='noopener noreferrer'
+							>
+								Source Code
 							</a>
 					</div>	
 				</div>
