@@ -29,7 +29,7 @@ export default function SectionSkills(props) {
 	return(
 		<div className="section-4" id="skills" style={section4}><span>SKILLS:</span>
 			<div className="section-slant" style={slant}></div>
-			<h1>In my programming journey, I have developed a set of skills:</h1>
+			<h4>In my programming journey, I have developed a set of skills:</h4>
 			<div className="skills-gridbox">
 			{skills.map(skill => {
 				return(
