@@ -22,59 +22,51 @@ body{
 	min-height: 100vh;
 	width: 100%;
 }
-.navbar{
-	background:rgba(10, 10, 10, 0.8);
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	z-index: 1000;
-}
-.navbar h1{
-	margin-left: 10px;
-}
+
 input, textarea{
 	color: rgb(250, 235, 215);
 }
 a {
 	text-decoration: none;
 }
+#about-me,
 #skills span, 
 .section-3-subsection, 
 #contact h3{
-	font-size: 30px;
-	font-weight: 600;
-	animation: glow 2s linear infinite alternate;
-	margin-bottom: 25px;
+	font-size: 24px;
+	font-weight: 400;
+	margin-bottom: 0 !important;
+	padding: 100px 0 50px;
+	margin-block-start: 0;
 }
 .footer{
 	display: grid;
 	grid-template-areas: 
-	"a a"
-	"b c"
-	"d d";
+	"email email"
+	"location mobile"
+	"copyrights copyrights";
 	align-items: center;
 	align-content: center;
 	border-top: 1px solid;
 }
 .email{
 	margin: 20px 0;
-	grid-area: a;
+	grid-area: email;
 }
 .location{
 	width: 150px;
-	grid-area: b;
+	grid-area: location;
 	justify-self: center;
 }
 .mobile{
 	width: 150px;
-	grid-area: c;
+	grid-area: mobile;
 	justify-self: center;
 }
 #copyrights{
 	margin-top: 20px;
 	font-size: 15px;
-	grid-area: d;
+	grid-area: copyrights;
 }
 
 @media only screen and (min-width: 300px){
@@ -84,7 +76,7 @@ a {
 		width: 100%;
 		height: 90vh;
 		background-image: url("./images/face4.jpg");
-		background-position: top;
+		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
@@ -131,10 +123,11 @@ a {
 					reveal 2s ease-in;
 		-moz-animation: mozGlow 2s linear infinite alternate 2s;
 		letter-spacing: 2px;
+		margin: 0;
 	}
 
 	.button-about-me{
-		margin-top: 350px;
+		margin-top: 325px;
 		padding: 20px;
 		font-size: 18px;
 		border: 2px solid antiquewhite;	
@@ -147,11 +140,13 @@ a {
 	}
 	/* ABOUT ME */
 	.section-2{
-		
 		position: relative;
 		min-height: 1500px;
 		height: auto;
 		transition: all 0.3s ease;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 	.section-slant {
 		border-top: 100px solid transparent;
@@ -162,7 +157,6 @@ a {
 		top: -100px;
 	}
 	.my-photo {
-		margin-top: 100px;
 		margin-bottom: 50px;
 		width: 225px;
 		height: 225px;
@@ -205,7 +199,7 @@ a {
 		align-items: center;
 		justify-content: center;
 		transition: all 0.3s ease;
-		padding: 100px 0 200px;
+		padding: 0 0 200px;
 	}
 
 	.projects-professional,
@@ -238,7 +232,7 @@ a {
 /* CONTACT FORM */
 	.section-5{
 		position: relative;
-		padding: 100px 0;
+		padding-bottom: 100px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -291,28 +285,29 @@ a {
 	}
 }
 @media only screen and (min-width: 425px) {
+	.section-1{
+		height: 600px;
+	}
 	.myPhoto{
 		width: 200px;
 		height: 200px;
 	}
+	.section-2 {
+		padding-bottom: 100px ;
+	}
 	.projects-hobby,
 	.projects-professional{
-		grid-template-rows: repeat(auto-fit, 650px);
+		grid-template-rows: repeat(auto-fit, 625px);
 		grid-template-columns: repeat(auto-fit, 350px);
-		gap: 40px;
+		gap: 25px;
 	}
-	.section-4 h1{
-		font-size: 23px;
-		margin: 0 25px 50px 25px;
-	}
-	#skills span, 
-	.section-3-subsection, 
-	#contact h3{
-		font-size: 40px;
-	}
+
 }
 
 @media only screen and (min-width: 768px) {
+	.section-2 {
+		padding-bottom: 100px;
+	}
 	.section-2 h2 {
 		width: 350px;
 		height: 300px;
@@ -326,14 +321,14 @@ a {
 	}
 	.skills-gridbox{
 		grid-template-columns: repeat(auto-fit, 300px) ;
-		grid-template-rows:	repeat(auto-fit, 400px) ;
+		grid-template-rows:	repeat(auto-fit, 350px) ;
 		gap: 15px;
 	}
-	.location{
-		justify-self: flex-end;
-	}
-	.mobile{
-		justify-self: flex-start;
+	.footer{
+		
+		grid-template-areas:
+		"location email email mobile"
+		"copyrights copyrights copyrights copyrights";
 	}
 }
 
@@ -343,13 +338,17 @@ a {
 		height: 1000px;
 		background-image: url("./images/face9.jpg");
 	}
-
+	.filter h2:first-of-type{
+		margin-top: 50px !important;
+	}
 	.section-1 h2{
 		font-size: 25px;
 		font-weight: 300;	
 	}
-
-	.button-aboutMe:hover{
+	.button-about-me{
+		margin-top: 400px;
+	}
+	.button-about-me:hover{
 		background-color: antiquewhite;
 		border-color: antiquewhite;
 		border-radius: 20px/25%;
@@ -357,9 +356,9 @@ a {
 		font-weight: 500;
 		letter-spacing: 1.4px;
 	}
-	.myPhoto{
-		width: 400px;
-		height: 400px;
+	.my-photo{
+		width: 300px;
+		height: 300px;
 	}
 	.about-me-text-container{
 		display: flex;
@@ -367,23 +366,15 @@ a {
 	}
 	.section-2{
 		margin-bottom: 100px;
+		min-height: 1200px;
 	}
 	.section-2 h2 {
-		font-size: 30px;
+		font-size: 24px;
 		width: 300px;
 		height: 450px;
 		margin: 0 15px;
 	}
-	.section-2 h2 a{
-		margin-top: 25px;
-		font-size: 22px;
-		width: 250px;
-		padding: 10px 0;
-	}
-	.section-3 a{
-		margin-left: auto;
-		margin-right: auto;
-	}
+
 	.project-live:hover,
 	.project-sourceCode:hover{
 		background-color: #00d8ff !important;
@@ -401,10 +392,13 @@ a {
 
 
 
-@media only screen and (min-width: 1500px){
-	.filter{
-		margin-left: 400px;
-		/* padding-top: 100px; */
+@media only screen and (min-width: 1440px){
+	.section-2{
+		min-height: 800px;
+	}
+	.section-2-content-container{
+		display: flex;
+		flex-direction: row;
 	}
 	.filter h2 {
 		font-size: 40px;

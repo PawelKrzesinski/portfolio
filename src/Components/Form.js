@@ -17,7 +17,7 @@ const form = (props) =>{
 				style={props.inputTextColor}
 				/>
 				<label htmlFor="fullName">Full name:</label>
-				<span className="animateInputBorder"></span>
+				<span className="animate-input-border"></span>
 			</div>
 			<div className="form-box">
 				<input
@@ -32,7 +32,7 @@ const form = (props) =>{
 				style={props.inputTextColor}
 				/>
 				<label htmlFor="email" required>E-mail address:</label>
-				<span className="animateInputBorder"></span>
+				<span className="animate-input-border"></span>
 			</div>
 			<div className="form-box">
 				<input
@@ -46,7 +46,7 @@ const form = (props) =>{
 				style={props.inputTextColor}
 				/>
 				<label htmlFor="companyName" required>Company Name:</label>
-				<span className="animateInputBorder"></span>
+				<span className="animate-input-border"></span>
 			</div>
 			<div className="form-box">
 				<textarea
@@ -61,7 +61,7 @@ const form = (props) =>{
 				style={props.inputTextColor}
 				/>
 				<label htmlFor="comment">Your message:</label>
-				<span className="animateInputBorder"></span>
+				<span className="animate-input-border"></span>
 			</div>		
 		</form>
 	)
