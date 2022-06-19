@@ -141,7 +141,7 @@ a {
 	/* ABOUT ME */
 	.section-2{
 		position: relative;
-		min-height: 1500px;
+		min-height: 1600px;
 		height: auto;
 		transition: all 0.3s ease;
 		display: flex;
