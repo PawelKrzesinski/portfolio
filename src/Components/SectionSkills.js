@@ -30,7 +30,8 @@ export default function SectionSkills(props) {
 		<div className="section-4" id="skills" style={section4}>
 			<span>SKILLS:</span>
 			<div className="section-slant" style={slant}></div>
-			<h4>In my programming journey, I have developed a set of skills:</h4>
+			<h4>I have experience in many different technologies. Some of them I am using on a daily basis, some of them I have used only for hobby projects. </h4>
+			<h4>Those are the technologies I have came across: </h4>
 			<div className="skills-gridbox">
 			{skills.map(skill => {
 				return(
