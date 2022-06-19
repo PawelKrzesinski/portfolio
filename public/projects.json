@@ -35,14 +35,5 @@
 		"description": "International Space Station tracking APP.",
 		"professional": false,
 		"key": "issapp"
-	},
-	{
-		"title": "Personal Portfolio",
-		"image": "./images/projects/portfolio.jpg",
-		"github": "https://github.com/PawelKrzesinski/Personal-Website",
-		"live": "https://pawelkrzesinski.github.io/Personal-Website/",
-		"description": "My first Portfolio. You can access my very first projects in there, my resume, and the contact me form.",
-		"professional": true,
-		"key": "portfolio"	
 	}
 ]}
