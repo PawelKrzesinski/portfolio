@@ -169,16 +169,16 @@ a {
 		font-size: 18px;
 		text-align: center;
 		width: 250px;
-		height: 250px;
+		height: 300px;
 		position: relative;
-		padding: 6px;
+		padding: 20px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 	}
 
 	.contact-me-container{
-		margin: 50px auto;
+		margin: 20px auto;
 	}
 	.contact-me-btn{
 		font-weight: 400;

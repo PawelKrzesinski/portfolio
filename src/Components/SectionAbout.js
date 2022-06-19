@@ -8,7 +8,8 @@ export default function SectionAbout(){
 	const state = useContext(ThemeContext)
 
 	const section2 = {
-		backgroundColor: state.theme.primary
+		backgroundColor: state.theme.primary,
+		color: state.theme.text
 	}
 	const slant = {
 		borderRightColor: state.theme.slantPrimary
@@ -40,7 +41,7 @@ export default function SectionAbout(){
 					<h2 style={text}>
 						Hi! I am Pawel, a proactive and responsible Software Developer.
 						Passionate about what I do and always up for a challenge.
-						I love problem-solving, and I am excited every time I start a new project.
+						I love problem-solving and coming up with new ideas that I turn into code.
 					</h2>
 					</MotionAnimate>
 					<MotionAnimate
@@ -50,8 +51,9 @@ export default function SectionAbout(){
 					delay={0.3}
 					ease="circIn" >
 					<h2 style={text}>
-						My experience is mostly around Angular/Nodejs/SCSS, but I have good understanding of other various technologies.
-						You can read more about that in "Skills" section.
+						I am experienced in various technologies like Angular or Nodejs/Nestjs
+						or testing environments like Jest or Jasmine.
+						You can read more about that in the "Skills" section.
 					</h2>		
 					</MotionAnimate>
 					<MotionAnimate
@@ -61,8 +63,8 @@ export default function SectionAbout(){
 					delay={0.6}
 					ease="circIn" >
 					<h2 style={text}>
-						I am looking for something part-time, that I could work on in the evenings and on weekends.
-						Looking forward to hearing from you.
+						I am available part-time and would love to pick up some extra work.
+						If you need a developer, please feel free to contact me.
 				<div className='contact-me-container'>
 					<a className='contact-me-btn' href="#contact" style={textColor}>Contact Me</a>
 				</div>
