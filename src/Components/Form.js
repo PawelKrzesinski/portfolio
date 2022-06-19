@@ -9,14 +9,14 @@ const form = (props) =>{
 				className="inputFields"
 				placeholder=" " 
 				type='text' 
-				value={props.fullName}
-				name='fullName' 
+				value={props.yourName}
+				name='yourName' 
 				onChange={props.changed}
 				required={true}
 				autoComplete="off"
 				style={props.inputTextColor}
 				/>
-				<label htmlFor="fullName">Full name:</label>
+				<label htmlFor="yourName">Your name:</label>
 				<span className="animate-input-border"></span>
 			</div>
 			<div className="form-box">
@@ -31,7 +31,7 @@ const form = (props) =>{
 				autoComplete="off"
 				style={props.inputTextColor}
 				/>
-				<label htmlFor="email" required>E-mail address:</label>
+				<label htmlFor="email">E-mail address:</label>
 				<span className="animate-input-border"></span>
 			</div>
 			<div className="form-box">
@@ -39,13 +39,13 @@ const form = (props) =>{
 				className="inputFields"
 				placeholder=" " 
 				type='text' 
-				value={props.companyName}
-				name='companyName' 
+				value={props.topic}
+				name='topic' 
 				onChange={props.changed}
 				autoComplete="off"
 				style={props.inputTextColor}
 				/>
-				<label htmlFor="companyName" required>Company Name:</label>
+				<label htmlFor="topic">Topic:</label>
 				<span className="animate-input-border"></span>
 			</div>
 			<div className="form-box">

@@ -28,10 +28,13 @@ export default function SectionSkills(props) {
 
 	return(
 		<div className="section-4" id="skills" style={section4}>
-			<span>SKILLS:</span>
+			<h3 className='section-title'>SKILLS:</h3>
 			<div className="section-slant" style={slant}></div>
-			<h4>I have experience in many different technologies. Some of them I am using on a daily basis, some of them I have used only for hobby projects. </h4>
-			<h4>Those are the technologies I have came across: </h4>
+			<h4>
+				I have experience in many different technologies. I am working with Angular on daily basis and know other frameworks, libraries and programming paradigms (e.g., OOP, FP).
+				I can develop mobile applications, responsive websites(including mobile-first approach) and web applications.
+			</h4>
+			<h4>This is my full skillset in detail: </h4>
 			<div className="skills-gridbox">
 			{skills.map(skill => {
 				return(

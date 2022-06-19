@@ -29,9 +29,11 @@ export default function SectionAbout(){
 	return (
 		<div className="section-2" id="about" style={section2}>
 			<div className="section-slant" style={slant}></div>
-			<h3 id='about-me'>ABOUT ME</h3>
 			<div className='section-2-content-container'>
-				<img src="./images/myPhoto2.jpg" alt="" className="my-photo" style={boxShadow}/>
+				<div>
+					<h3 id='about-me' className='section-title'>ABOUT ME</h3>
+					<img src="./images/myPhoto2.jpg" alt="" className="my-photo" style={boxShadow}/>
+				</div>
 				<div className="about-me-text-container">
 					<MotionAnimate
 					animation="fadeInUp"
@@ -51,7 +53,7 @@ export default function SectionAbout(){
 					delay={0.3}
 					ease="circIn" >
 					<h2 style={text}>
-						I am experienced in various technologies like Angular or Nodejs/Nestjs
+						I am experienced in various technologies like Angular and Nodejs/Nestjs
 						or testing environments like Jest or Jasmine.
 						You can read more about that in the "Skills" section.
 					</h2>		

@@ -29,44 +29,26 @@ input, textarea{
 a {
 	text-decoration: none;
 }
-#about-me,
-#skills span, 
-.section-3-subsection, 
-#contact h3{
+.section-title{
 	font-size: 24px;
 	font-weight: 400;
-	margin-bottom: 0 !important;
-	padding: 100px 0 50px;
+	margin-bottom: 0;
+	padding: 50px 0 25px;
 	margin-block-start: 0;
 }
+#about-me{
+	padding: 0;
+	margin-bottom: 50px !important;
+}
 .footer{
-	display: grid;
-	grid-template-areas: 
-	"email email"
-	"location mobile"
-	"copyrights copyrights";
+	display: flex;
+	flex-direction: column;
 	align-items: center;
 	align-content: center;
 	border-top: 1px solid;
 }
-.email{
-	margin: 20px 0;
-	grid-area: email;
-}
-.location{
-	width: 150px;
-	grid-area: location;
-	justify-self: center;
-}
-.mobile{
-	width: 150px;
-	grid-area: mobile;
-	justify-self: center;
-}
-#copyrights{
-	margin-top: 20px;
-	font-size: 15px;
-	grid-area: copyrights;
+.footer h5, .footer h6{
+	margin: 10px 0;
 }
 
 @media only screen and (min-width: 300px){
@@ -156,8 +138,14 @@ a {
 		position: absolute;
 		top: -100px;
 	}
+	.section-2-content-container{
+		margin-top: 100px;
+	}
+	
+	.my-photo, #about-me{
+		margin-right: 16px;
+	}
 	.my-photo {
-		margin-bottom: 50px;
 		width: 225px;
 		height: 225px;
 		border-radius: 50%;
@@ -199,7 +187,7 @@ a {
 		align-items: center;
 		justify-content: center;
 		transition: all 0.3s ease;
-		padding: 0 0 200px;
+		padding: 50px 0 200px;
 	}
 
 	.projects-professional,
@@ -214,7 +202,7 @@ a {
 	/* SKILLS */
 	.section-4 {
 		margin-bottom: 100px;
-		padding: 100px 0;
+		padding: 50px 0;
 		position: relative;
 		flex-direction: column;
 	}
@@ -232,19 +220,15 @@ a {
 /* CONTACT FORM */
 	.section-5{
 		position: relative;
-		padding-bottom: 100px;
+		padding: 50px 0 100px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		background-color: rgb(25, 25, 25);
-		width: 100%;
+		margin: 0 0 -80px 0 !important;
 		transition: all 0.3s ease;
-		margin-bottom: -80px;
 	}
-	.section-5 h3{
-		margin: 0 !important;
-	}
+
 	.section-5 .form-box{
 		position: relative;
 		display: flex;
@@ -269,7 +253,7 @@ a {
 		border-width: 1px;
 		border-style: solid;
 		border-bottom: none !important;
-		transform: translateY(2px);
+		transform: translateY(1px);
 		position: sticky;
 		bottom: 0;
 		display: flex;
@@ -288,13 +272,11 @@ a {
 	.section-1{
 		height: 600px;
 	}
-	.myPhoto{
+	.my-photo{
 		width: 200px;
 		height: 200px;
 	}
-	.section-2 {
-		padding-bottom: 100px ;
-	}
+
 	.projects-hobby,
 	.projects-professional{
 		grid-template-rows: repeat(auto-fit, 625px);
@@ -316,25 +298,17 @@ a {
 	.contact-me-container {
 		margin: 30px auto;
 	}
-	.section-4 h1{
-		font-size: 30px;
-	}
+
 	.skills-gridbox{
 		grid-template-columns: repeat(auto-fit, 300px) ;
 		grid-template-rows:	repeat(auto-fit, 350px) ;
 		gap: 15px;
 	}
-	.footer{
-		
-		grid-template-areas:
-		"location email email mobile"
-		"copyrights copyrights copyrights copyrights";
-	}
+
 }
 
 @media only screen and (min-width: 1024px) {
 	.section-1 {
-		margin-top: 100px;
 		height: 1000px;
 		background-image: url("./images/face9.jpg");
 	}
@@ -346,7 +320,7 @@ a {
 		font-weight: 300;	
 	}
 	.button-about-me{
-		margin-top: 400px;
+		margin-top: 300px;
 	}
 	.button-about-me:hover{
 		background-color: antiquewhite;
@@ -356,16 +330,23 @@ a {
 		font-weight: 500;
 		letter-spacing: 1.4px;
 	}
+	.section-title{
+		font-size: 30px;
+	}
 	.my-photo{
 		width: 300px;
 		height: 300px;
+		margin-bottom: 50px;
+	}
+	.section-2-content-container{
+		flex-direction: row;
 	}
 	.about-me-text-container{
 		display: flex;
 		justify-content: center;
 	}
 	.section-2{
-		margin-bottom: 100px;
+		padding-bottom: 100px;
 		min-height: 1200px;
 	}
 	.section-2 h2 {
@@ -374,20 +355,23 @@ a {
 		height: 450px;
 		margin: 0 15px;
 	}
-
+	.projects-hobby,
+	.projects-professional{
+		gap: 40px;
+	}
 	.project-live:hover,
 	.project-sourceCode:hover{
 		background-color: #00d8ff !important;
 		color: black !important;
 	}
-	.section-4 {
-		transition: all 0.3s ease;
-	}
+
 	.icons:hover{
 		transition: all 0.2s linear;
 		transform: scale(1.2);
 	}
-
+	.icons-box{
+		transform: translateY(2px);
+	}
 }
 
 
@@ -406,8 +390,8 @@ a {
 	.filter h2 span{
 		font-size: 50px;
 	}
-	.button-aboutMe{
-		top: 500px;
+	.button-about-me{
+		top: 300px !important;
 	}
 }
 
@@ -418,18 +402,13 @@ a {
 	.section-1 .h2-1 span{
 		font-size: 70px;
 	}
-	.section-1 h2 {
-		font-size: 60px;
-
-	}
-	.section-1 .h2-2,
-	.section-1 .h2-3{
+	.section-1 .h2-2{
 		font-size: 50px;
 	}
-	.button-aboutMe {
+	.button-about-me {
 		font-size: 30px;
 		padding: 30px;
-		margin-top: 700px;
+		margin-top: 550px;
 	}
 	.button-aboutMe:hover{
 		border-radius: 25px/25%;
@@ -441,19 +420,13 @@ a {
 		padding: 0 35px;
 	}
 }
-@media only screen and (min-width: 2200px){
+@media only screen and (min-width: 2560px){
 	.section-1{
 		height: 1500px;
 	}
 
 }
 
-@media only screen and (min-width: 3000px){
-	
-	.section-1 {
-		height: 2000px;
-	}
-}
 @media only screen and (min-width: 4000px){
 	.section-1 {
 		height: 3000px;
@@ -514,7 +487,6 @@ a {
 	.icons-box{
 		width: 400px;
 		height: 120px;
-		border-radius: 40px 40px 0 0/ 35% 35% 0 0;
 	}
 	.icons{
 		width: 75px;
@@ -533,12 +505,8 @@ a {
 	}
 	.email,
 	.location,
-	.mobile,
 	#copyrights{
 		font-size: 40px;
-	}
-	.mobile{
-		margin-left: 75px;
 	}
 	.location{
 		margin-right: 75px;
