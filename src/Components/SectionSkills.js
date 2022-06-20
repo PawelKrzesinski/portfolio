@@ -27,9 +27,14 @@ export default function SectionSkills(props) {
 	const skills = props.skills;
 
 	return(
-		<div className="section-4" id="skills" style={section4}><span>SKILLS:</span>
+		<div className="section-4" id="skills" style={section4}>
+			<h3 className='section-title'>SKILLS:</h3>
 			<div className="section-slant" style={slant}></div>
-			<h1>In my programming journey, I have developed a set of skills:</h1>
+			<h4>
+				I have experience in many different technologies. I am working with Angular on daily basis and know other frameworks, libraries and programming paradigms (e.g., OOP, FP).
+				I can develop mobile applications, responsive websites(including mobile-first approach) and web applications.
+			</h4>
+			<h4>This is my full skillset in detail: </h4>
 			<div className="skills-gridbox">
 			{skills.map(skill => {
 				return(

@@ -29,7 +29,7 @@ export default function SectionContact(props) {
 	return(
 		<div className="section-5" id="contact" style={section5}>
 			<div className="section-slant" style={slant}></div>
-			<h3>CONTACT ME</h3>
+			<h3 className='section-title'>CONTACT ME</h3>
 			<Form 
 			onSubmit={props.onSubmit}
 			changed={props.changed}

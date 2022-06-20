@@ -33,7 +33,7 @@
 		border-bottom: 1px solid darkgray;
 		transition: all .15s linear;
 	}
-	.animateInputBorder {
+	.animate-input-border {
 		position: absolute;
 		bottom: 0;
 		width: 260px;
@@ -49,8 +49,8 @@
 		height: 150px;
 	}
 
-	.section-5 form input:focus ~ .animateInputBorder,
-	.section-5 form textarea:focus ~ .animateInputBorder{
+	.section-5 form input:focus ~ .animate-input-border,
+	.section-5 form textarea:focus ~ .animate-input-border{
 		transform: scaleX(1);
 	}
 	.section-5 form input::placeholder, .section-5 form textarea::placeholder{
@@ -88,9 +88,9 @@
 	}
 	#submit {
 		background-color: #00d8ff;
-		width: 260px;
+		width: 130px;
 		border: 1px solid transparent;
-		border-radius: 25px/25px;
+		border-radius: 5px;
 		padding: 10px;
 		font-size: 20px;
 		cursor: pointer;
@@ -148,7 +148,7 @@
 	.section-5 form textarea:focus ~ #contact-form > div:nth-child(5) > label{
 		height: 300px !important;
 	}
-	.animateInputBorder{
+	.animate-input-border{
 		width: 400px;
 	}
 	.section-5 p{

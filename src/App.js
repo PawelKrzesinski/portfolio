@@ -23,8 +23,8 @@ import NavbarBottom from './Components/NavbarBottom';
 
 class App extends Component {
 	state = {
-				fullName: "",
-				companyName: "",
+				yourName: "",
+				topic: "",
 				email: "",
 				comment: "",
 				projects: [],
@@ -84,8 +84,8 @@ class App extends Component {
 
 	resetForm = () => {
 		this.setState({
-			fullName: "",
-			companyName: "",
+			yourName: "",
+			topic: "",
 			email: "",
 			comment: "",
 		})

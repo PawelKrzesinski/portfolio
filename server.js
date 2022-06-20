@@ -29,11 +29,11 @@ transporter.verify((error, success) => {
 })
 
 router.post('/send', (req, res, next) => {
-	const name = req.body.fullName;
-	var companyName = req.body.companyName;
+	const name = req.body.yourName;
+	var topic = req.body.topic;
 	const email = req.body.email;
 	const comment = req.body.comment;
-	const content = `Full name: ${name} \nCompany Name: ${companyName} \nE-mail: ${email} \nComment: ${comment}`;
+	const content = `Name: ${name} \nTopic: ${topic} \nE-mail: ${email} \nComment: ${comment}`;
 	console.log(content);
 	const mail = {
 		from: name,
