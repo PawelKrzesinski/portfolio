@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './project-card.component.css';
 const projectCard = (props) => {
 	
 	return(

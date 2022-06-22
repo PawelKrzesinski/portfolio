@@ -1,22 +1,17 @@
 import React, { Component } from 'react';
-import { ThemeContextProvider } from './Components/ThemeProvider';
+import { ThemeContextProvider } from './components/theme-provider/theme-provider.component';
 
 import './App.css';
-import './Css/Form.css';
-import './Css/SkillCard.css';
-import './Css/ProjectCard.css';
-import './Css/Animations.css';
-import './Css/ThemeSwitch.css'
-import './Css/Navbar.css';
+import './animations/Animations.css';
 
-import Navbar from './Components/Navbar';
-import SectionAbout from './Components/SectionAbout'
-import SectionHome from './Components/SectionHome';
-import SectionProjects from './Components/SectionProjects'
-import SectionSkills from './Components/SectionSkills.js';
-import SectionContact from './Components/SectionContact'
-import Footer from './Components/Footer';
-import NavbarBottom from './Components/NavbarBottom';
+import Navbar from './components/navbar/navbar.component';
+import SectionAbout from './components/section-about/section-about.component'
+import SectionHome from './components/section-home/section-home.component';
+import SectionProjects from './components/section-projects/section-projects.component'
+import SectionSkills from './components/section-skills/section-skills.component';
+import SectionContact from './components/section-contact/section-contact.component'
+import Footer from './components/footer/footer.component';
+import NavbarBottom from './components/navbar-bottom/navbar-bottom.component';
 
 
 

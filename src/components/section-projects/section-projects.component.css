@@ -1,0 +1,42 @@
+@media only screen and (min-width: 300px){
+	.section-3 {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s ease;
+		padding: 50px 0 200px;
+	}
+
+	.projects-professional,
+	.projects-hobby {
+		display: grid;
+		grid-template-rows: repeat(auto-fit, 600px);
+		grid-template-columns: repeat(auto-fit, 300px);
+		gap: 40px;
+		justify-content: center;
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 425px) {
+	.projects-hobby,
+	.projects-professional{
+		grid-template-rows: repeat(auto-fit, 625px);
+		grid-template-columns: repeat(auto-fit, 350px);
+		gap: 25px;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.projects-hobby,
+	.projects-professional{
+		gap: 40px;
+	}
+	.project-live:hover,
+	.project-sourceCode:hover{
+		background-color: #00d8ff !important;
+		color: black !important;
+	}
+}

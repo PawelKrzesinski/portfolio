@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from './ThemeProvider'
-import { MotionAnimate } from 'react-motion-animate'
+import { ThemeContext } from '../theme-provider/theme-provider.component';
+import './section-about.component.css';
+import { MotionAnimate } from 'react-motion-animate';
 
 
 

@@ -1,0 +1,28 @@
+@media only screen and (min-width: 300px){
+	.section-4 {
+		margin-bottom: 100px;
+		padding: 50px 0;
+		position: relative;
+		flex-direction: column;
+	}
+	.section-4 h4 {
+		font-weight: 400;
+		margin:0 15px 50px 15px;
+	}
+	.skills-gridbox{
+		display: grid;
+		grid-template-columns: repeat(auto-fit, 300px);
+		grid-template-rows: repeat(auto-fit, 400px);
+		justify-content: center;
+		gap: 30px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.skills-gridbox{
+		grid-template-columns: repeat(auto-fit, 300px) ;
+		grid-template-rows:	repeat(auto-fit, 350px) ;
+		gap: 15px;
+	}
+
+}

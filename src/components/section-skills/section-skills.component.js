@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from './ThemeProvider'
-import SkillCard from './SkillCard.js';
-
-
+import { ThemeContext } from '../theme-provider/theme-provider.component'
+import SkillCard from './skill-card/skill-card.component';
+import './section-skills.component.css'
 
 
 export default function SectionSkills(props) {

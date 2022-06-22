@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from './ThemeProvider';
+import { ThemeContext } from '../theme-provider/theme-provider.component';
+import './footer.component.css';
 
 
 export default function Footer(){

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from './ThemeProvider'
-import ProjectCard from './ProjectCard';
+import { ThemeContext } from '../theme-provider/theme-provider.component';
+import ProjectCard from './project-card/project-card.component';
+import './section-projects.component.css';
 
 
 

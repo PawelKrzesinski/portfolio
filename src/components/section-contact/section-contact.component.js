@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from './ThemeProvider'
-import Form from './Form.js';
-import spinner from '../images/Spinner-react-biggest.gif';
-
+import { ThemeContext } from '../theme-provider/theme-provider.component'
+import Form from './form/form.component';
+import spinner from '../../images/Spinner-react-biggest.gif';
+import './section-contact.component.css';
 
 export default function SectionContact(props) {
 	

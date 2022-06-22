@@ -1,0 +1,44 @@
+@media only screen and (min-width: 300px){
+    .icons-box{
+        width: 250px;
+        height: 80px;
+        border-radius: 5px 5px 0 0;
+        border-width: 1px;
+        border-style: solid;
+        border-bottom: none !important;
+        transform: translateY(1px);
+        position: sticky;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        transition: all 0.2s ease;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .icons{
+        width: 40px;
+    }    
+}
+
+@media only screen and (min-width: 1024px){
+    .icons-box{
+		transform: translateY(2px);
+	}
+    .icons:hover{
+		transition: all 0.2s linear;
+		transform: scale(1.2);
+	}
+}
+
+@media only screen and (min-width: 4000px){
+    .icons-box{
+		width: 450px;
+		height: 150px;
+		transform: translateY(3px);
+	}
+	.icons{
+		width: 75px;
+	}
+}
