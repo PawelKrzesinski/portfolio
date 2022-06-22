@@ -1,7 +1,5 @@
 import React from 'react';
-
-
-
+import './section-home.component.css';
 
 export default function SectionHome() {
 	return (

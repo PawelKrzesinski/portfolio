@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
-import {ThemeContext} from './ThemeProvider'
-import ToggleTheme from './ToggleTheme'
+import {ThemeContext} from '../theme-provider/theme-provider.component'
+import ToggleTheme from './toggle-theme/toggle-theme.component'
+import './navbar-bottom.component.css';
 
 
 

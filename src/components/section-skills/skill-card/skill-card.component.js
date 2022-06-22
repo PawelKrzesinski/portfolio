@@ -1,4 +1,5 @@
 import React from 'react';
+import './skill-card.component.css';
 
 const skillCard = (props) => {
 	return(

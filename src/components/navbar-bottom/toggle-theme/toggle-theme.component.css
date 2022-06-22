@@ -4,6 +4,15 @@
 		margin-right: auto;
 		margin-left: auto;
 	}
+	.theme-switch-box{
+		font-size: 14px;
+		margin-left: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 50px;
+	}
 	.theme-switch-box p{
 		position: relative;
 		top: 0px;
@@ -57,6 +66,9 @@
 }
 
 @media only screen and (min-width: 4000px){
+	.theme-switch-box{
+		font-size: 30px;
+	}	
 	.theme-switch label{
 		top: -30px;
 		width: 80px;
