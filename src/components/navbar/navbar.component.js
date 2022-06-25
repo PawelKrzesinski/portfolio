@@ -15,7 +15,10 @@ export default function Navbar(){
 	
 	return (
 		<div className="navbar" style={navbar}>
-			<a href="./index.html" className="logo" style={navbarLink}>K.</a>
+			<a href="./index.html" className="logo" style={navbarLink}>
+				<span className='logo-part1'>P</span>
+				<span className='logo-part2'>K</span>
+			</a>
 			<a href="#root" style={navbarLink}>HOME</a>
 			<a href="#about" style={navbarLink}>ABOUT</a>
 			<a href="#projects" style={navbarLink}>PROJECTS</a>
