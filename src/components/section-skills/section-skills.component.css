@@ -4,6 +4,9 @@
 		padding: 50px 0;
 		position: relative;
 		flex-direction: column;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 	.section-4 h4 {
 		font-weight: 400;

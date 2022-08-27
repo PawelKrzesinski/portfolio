@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../theme-provider/theme-provider.component'
-import SkillCard from './skill-card/skill-card.component';
+// import SkillCard from './skill-card/skill-card.component';
 import './section-skills.component.css'
-
-
+import SkillPicker from './skill-picker/skill-picker.component';
+import ReactDOM from "react-dom";
 export default function SectionSkills(props) {
 
 	const state = useContext(ThemeContext)
@@ -23,8 +23,8 @@ export default function SectionSkills(props) {
 	}
 
 
-	const skills = props.skills;
-
+	const skillsData = props;
+	console.log(skillsData)
 	return(
 		<div className="section-4" id="skills" style={section4}>
 			<h3 className='section-title'>SKILLS:</h3>
@@ -34,7 +34,8 @@ export default function SectionSkills(props) {
 				I can develop mobile applications, responsive websites(including mobile-first approach) and web applications.
 			</h4>
 			<h4>This is my full skillset in detail: </h4>
-			<div className="skills-gridbox">
+			<SkillPicker state={skillsData.menuState} skills={skillsData.skills} />
+			{/* <div className="skills-gridbox">
 			{skills.map(skill => {
 				return(
 					<SkillCard 
@@ -43,12 +44,14 @@ export default function SectionSkills(props) {
 					skillCardStyles={skillCardStyles}/>
 				)
 			})}
-			</div>
+			</div> */}
 		</div>
 	)
 }
 
-
+ReactDOM.render(<h1>PLERP</h1>
+// <SkillPicker />
+, document.getElementById('root'))
 
 
 

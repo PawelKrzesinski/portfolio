@@ -17,16 +17,25 @@ import NavbarBottom from './components/navbar-bottom/navbar-bottom.component';
 
 
 class App extends Component {
-	state = {
-				yourName: "",
-				topic: "",
-				email: "",
-				comment: "",
-				projects: [],
-				skills:[]
+	constructor() {
+		super();
+		this.state = {
+					formData: {
+						yourName: "",
+						topic: "",
+						email: "",
+						comment: "",
+					},
+					projects: [],
+					skillsSection: {
+						skills:[],
+						menuState: "deactivated",
+					}
+		}
 	}
 	
 	componentDidMount () {
+		
 		fetch('projects.json', {
 			headers: {
 				"Content-Type" : "application/json",
@@ -35,7 +44,7 @@ class App extends Component {
 		}).then(res => {
 			return res.json();
 		}).then(data => {
-			this.setState({projects: data.projects})
+			this.setState({...this.state, projects: data.projects})
 		})
 		fetch('skills.json', {
 			headers: {
@@ -45,11 +54,11 @@ class App extends Component {
 		}).then(res => {
 			return res.json();
 		}).then(data => {
-			this.setState({skills: data.skills})
+			this.setState({...this.state, skillsSection: {...this.state.skillsSection, skills: data.skills }})
 		})
 	}
 	handleChange = e => {
-		this.setState({[e.target.name]: e.target.value})
+		this.setState({...this.state, [e.target.name]: e.target.value})
 	}
 
 	handleSubmit = e => {
@@ -58,7 +67,7 @@ class App extends Component {
 		e.preventDefault()
 		fetch('https://pawel-krzesinski.co.uk/api/send', {
 			method: 'POST',
-			body: JSON.stringify(this.state),
+			body: JSON.stringify(this.state.formData),
 			headers: {
 				'Accept': 'application/json',
 				'Content-type': 'application/json'
@@ -68,21 +77,23 @@ class App extends Component {
 			if(!response.ok){
 				console.error(response)
 				console.log("Message not sent")
-				this.setState({wasMsgSent: "Something went wrong. Try again or contact me through email at the bottom of the page."})
+				this.setState({...this.state, wasMsgSent: "Something went wrong. Try again or contact me through email at the bottom of the page."})
 			} else {
 				this.resetForm();
 				console.log("Message sent")
-				this.setState({wasMsgSent: "Message has been sent!"})
+				this.setState({...this.state, wasMsgSent: "Message has been sent!"})
 			}
 		})
 	}
 
 	resetForm = () => {
-		this.setState({
-			yourName: "",
-			topic: "",
-			email: "",
-			comment: "",
+		this.setState({...this.state,
+			formData: {
+				yourName: "",
+				topic: "",
+				email: "",
+				comment: "",
+		},
 		})
 		Array.from(document.querySelectorAll('.inputFields')).forEach( field => {
 			field.value = '';
@@ -92,9 +103,7 @@ class App extends Component {
 
 	
 	render() {
-		const {wasMsgSent} = this.state;
-		const {projects} = this.state;
-		const {skills} = this.state;
+		const {wasMsgSent, projects, skillsSection} = this.state;
 		return (
 			<ThemeContextProvider>
 				<div className="App" id="top">
@@ -103,8 +112,7 @@ class App extends Component {
 					<SectionAbout />
 					<SectionProjects 
 					projects={projects}/>
-					<SectionSkills
-					skills={skills}/>
+					<SectionSkills skillSection={skillsSection}/>
 					<SectionContact 
 					changed={this.handleChange.bind(this)}
 					onSubmit={this.handleSubmit.bind(this)}

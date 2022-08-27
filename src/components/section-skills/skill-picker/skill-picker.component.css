@@ -1,0 +1,85 @@
+
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.plerp{
+  background-color: darkmagenta;
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.skill-icons{
+  background-color: green;
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+	display: flex;
+  justify-content: center;
+	align-items: center;
+  transition: all 0.3s linear;
+	position: absolute;
+	left: 0;
+	border-radius: 50%;
+	transform-origin: 150px;
+	transform: rotate(0deg) translateX(150px);
+}
+
+
+.toggle{
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	background: gray;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 10000;
+	cursor: pointer;
+	font-size: 30px;
+	font-weight: bolder;
+	border-radius: 50%;
+	transition: all 1s;
+}
+
+.active{
+	transform: rotate(315deg);
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+
+@keyframes shot {
+  0% {
+    top: 125px;
+    left: 125px;
+  }
+  25% {
+    top: var(--full-pos-top)/4 + 'px';
+    left: var(--full-pos-left)/4 + 'px';
+  };
+  50% {
+    top: var(--full-pos-top)/2 + 'px';
+    left: var(--full-pos-left)/2 + 'px';
+  };
+  75% {
+    top: var(--full-pos-top)*0.75 + 'px';
+    left: var(--full-pos-left)*0.75 + 'px';
+  };
+  100% {
+    top: var(--full-pos-top) + 'px';
+    left: -var(--full-pos-left) + 'px';
+  };
+};
