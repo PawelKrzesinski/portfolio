@@ -60,7 +60,7 @@
 	}
 	.contact-me-btn:hover{
 		color: black !important;
-		background-color: #00d8ff;
+		background-color: #00d8ff !important;
 	}
 }
 @media only screen and (min-width: 425px) {

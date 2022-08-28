@@ -6,34 +6,34 @@ import { MotionAnimate } from 'react-motion-animate';
 
 
 export default function SectionAbout(){
-	const state = useContext(ThemeContext)
+	const themeState = useContext(ThemeContext)
 
-	const section2 = {
-		backgroundColor: state.theme.primary,
-		color: state.theme.text
+	const styles = {
+		section:{
+			backgroundColor: themeState.theme.primary,
+			color: themeState.theme.quaternary || themeState.theme.tetriary,
+		},
+		slant:{
+			borderRightColor: themeState.theme.primary,
+		},
+		text:{
+			boxShadow: themeState.theme.boxShadow,
+			backgroundColor: themeState.theme.secondary,
+		},
+		contactBtn:{
+			backgroundColor: themeState.theme.primary,
+			color: themeState.theme.tetriary,
+			borderColor: themeState.theme.tetriary,
+		}
 	}
-	const slant = {
-		borderRightColor: state.theme.slantPrimary
-	}
-	const text = {
-		color: state.theme.text,
-		textShadow: state.theme.textShadow,
-		boxShadow: state.theme.BoxShadow,
-		backgroundColor: state.theme.secondary
-	}
-	const boxShadow = {
-		boxShadow: state.theme.BoxShadow
-	}
-	const textColor = {
-		color: state.theme.text
-	}
+
 	return (
-		<div className="section-2" id="about" style={section2}>
-			<div className="section-slant" style={slant}></div>
+		<div className="section-2" id="about" style={styles.section}>
+			<div className="section-slant" style={styles.slant}></div>
 			<div className='section-2-content-container'>
 				<div>
 					<h3 id='about-me' className='section-title'>ABOUT ME</h3>
-					<img src="./images/myPhoto2.jpg" alt="" className="my-photo" style={boxShadow}/>
+					<img src="./images/myPhoto2.jpg" alt="" className="my-photo"/>
 				</div>
 				<div className="about-me-text-container">
 					<MotionAnimate
@@ -41,7 +41,7 @@ export default function SectionAbout(){
 					reset={true}
 					speed={0.5}
 					ease="circIn" >
-					<h2 style={text}>
+					<h2 style={styles.text}>
 						Hi! I am Pawel, a proactive and responsible Software Developer.
 						Passionate about what I do and always up for a challenge.
 						I love problem-solving and coming up with new ideas that I turn into code.
@@ -53,7 +53,7 @@ export default function SectionAbout(){
 					speed={0.5}
 					delay={0.3}
 					ease="circIn" >
-					<h2 style={text}>
+					<h2 style={styles.text}>
 						I am experienced in various fantastic technologies like Angular 
 						and Nodejs/Nestjs or testing environments like Jest or Jasmine.
 						You can read more about that in the "Skills" section.
@@ -65,11 +65,11 @@ export default function SectionAbout(){
 					speed={0.5}
 					delay={0.6}
 					ease="circIn" >
-					<h2 style={text}>
+					<h2 style={styles.text}>
 						I am available part-time and would love to pick up some extra work.
 						If you need a developer, please feel free to contact me.
 				<div className='contact-me-container'>
-					<a className='contact-me-btn' href="#contact" style={textColor}>Contact Me</a>
+					<a className='contact-me-btn' href="#contact" style={styles.contactBtn}>Contact Me</a>
 				</div>
 					</h2>
 					</MotionAnimate>
