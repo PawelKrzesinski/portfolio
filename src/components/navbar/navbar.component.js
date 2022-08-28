@@ -3,14 +3,13 @@ import { ThemeContext } from '../theme-provider/theme-provider.component';
 import './navbar.component.css';
 
 export default function Navbar(){
-	const state = useContext(ThemeContext)
+	const themeState = useContext(ThemeContext)
 
 	const navbar = {
-		backgroundColor: state.theme.navbar,	
+		backgroundColor: themeState.theme.navbar,	
 	}
 	const navbarLink = {
-		color: state.theme.text,
-		borderColor: state.theme.border
+		color: themeState.theme.quaternary || themeState.theme.tetriary,
 	}
 	
 	return (

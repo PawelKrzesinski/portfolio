@@ -13,28 +13,29 @@ export default function SectionContact(props) {
 		submitResult: "",
 	};
 	const [state, setState] = useState(initialState);
-	const themeSwitch = useContext(ThemeContext)
+	const themeState = useContext(ThemeContext)
 	
-	const section5 = {
-		backgroundColor: themeSwitch.theme.secondary,
-		color: themeSwitch.theme.text
-	}
-
-	const slant = {
-		borderRightColor: themeSwitch.theme.slantSecondary,
-		borderTopColor: themeSwitch.theme.slantPrimary
-	}
-	const inputTextColor = {
-		color: themeSwitch.theme.LinksText
-	}
-	const formBtnStyle = {
-		color: themeSwitch.theme.text,
-		backgroundColor: themeSwitch.theme.primary,
-		borderColor: themeSwitch.theme.LinksText
+	const styles = {
+		section:{
+			backgroundColor: themeState.theme.secondary,
+			color: themeState.theme.quaternary || themeState.theme.tetriary,
+		},
+		slant:{
+			borderRightColor: themeState.theme.secondary,
+			borderTopColor: themeState.theme.primary
+		},
+		inputTextColor:{
+			color: themeState.theme.quaternary || themeState.theme.tetriary,
+		},
+		submitBtn:{
+			color: themeState.theme.quaternary || themeState.theme.tetriary,
+			backgroundColor: themeState.theme.primary,
+			borderColor: themeState.theme.tetriary
+		},
 	}
 
 	const handleChange = (e) => {
-		setState({ [e.target.name]: e.target.value });
+		setState({...state, [e.target.name]: e.target.value });
 	};
 
 	const handleSubmit = async (e) => {
@@ -48,19 +49,20 @@ export default function SectionContact(props) {
 				Accept: "application/json",
 				"Content-type": "application/json",
 			},
-		}).then((response) => {
+		})
+		response.then((response) => {
 			loading.style.display = "none";
 			if (!response.ok) {
 				console.error(response);
 				console.log("Message not sent");
 				setState({
-					wasMsgSent:
+					submitResult:
 						"Something went wrong. Try again or contact me through email at the bottom of the page.",
 				});
 			} else {
 				resetForm();
 				console.log("Message sent");
-				setState({ wasMsgSent: "Message has been sent!" });
+				setState({ submitResult: "Message has been sent!" });
 			}
 		});
 	};
@@ -78,23 +80,23 @@ export default function SectionContact(props) {
 	};
 	
 	return(
-		<div className="section-5" id="contact" style={section5}>
-			<div className="section-slant" style={slant}></div>
+		<div className="section-5" id="contact" style={styles.section}>
+			<div className="section-slant" style={styles.slant}></div>
 			<h3 className='section-title'>CONTACT ME</h3>
 			<Form 
 			onSubmit={handleSubmit}
 			changed={handleChange}
 			method="POST"
-			inputTextColor={inputTextColor}
+			inputTextColor={styles.inputTextColor}
 			/>
 			<img src={spinner} alt="Loading..." className="spinner"/>
 			<button 
 				type="submit" 
 				id="submit" 
 				form="contact-form"
-				style={formBtnStyle}
+				style={styles.submitBtn}
 			>Submit</button>
-			<p>{state.wasMsgSent}</p>
+			<p>{state.submitResult}</p>
 		</div>
 	)
 }
