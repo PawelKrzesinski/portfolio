@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { ThemeContext } from '../theme-provider/theme-provider.component';
 import ProjectCard from './project-card/project-card.component';
 import './section-projects.component.css';
@@ -6,34 +6,58 @@ import './section-projects.component.css';
 
 
 
-export default function SectionProjects(props) {
-	const projects = props.projects;
-	const state = useContext(ThemeContext)
-	
-	const section3 = {
-		backgroundColor: state.theme.secondary,
-		color: state.theme.text
-	}
+export default function SectionProjects() {
 
-	const slant = {
-		borderRightColor: state.theme.slantSecondary,
-		borderTopColor: state.theme.slantPrimary
-	}
+
+	const initialState = {
+		projects: [],
+	};
+	const [state, setState] = useState(initialState);
 	
-	const projectStyle = {
-		backgroundColor: state.theme.primary,
-		color: state.theme.text,
-		boxShadow: state.theme.BoxShadow
+	const projects = state.projects;
+	const themeState = useContext(ThemeContext)
+	
+
+	const styles = {
+		section: {
+			backgroundColor: themeState.theme.secondary,
+			color: themeState.theme.quaternary || themeState.theme.tetriary
+		},
+		slant: {
+			borderRightColor: themeState.theme.secondary,
+		},
+		projectCard: {
+			backgroundColor: themeState.theme.primary,
+			color: themeState.theme.quaternary || themeState.theme.tetriary,
+			boxShadow: themeState.theme.boxShadow
+		},
+		projectLinks: {
+			backgroundColor: themeState.theme.secondary,
+			color: themeState.theme.tetriary,
+			borderColor: themeState.theme.tetriary
+		}
+		
 	}
-	const projectLinks = {
-		backgroundColor: state.theme.LinksColorBg,
-		color: state.theme.LinksText,
-		borderColor: state.theme.LinksColorBorder
-	}
+	const getProjectsData = () => {
+		fetch("projects.json", {
+			headers: {
+				"Content-Type": "application/json",
+				Accept: "application/json",
+			},
+		})
+			.then((res) => {
+				return res.json();
+			})
+			.then((data) => {
+				return setState({...state, projects: data.projects });
+			});
+	};
+
+	useEffect(getProjectsData, [])
 
 	return(
-		<div className="section-3" id="projects" style={section3}>
-			<div className="section-slant section-title" style={slant}></div>
+		<div className="section-3" id="projects" style={styles.section}>
+			<div className="section-slant section-title" style={styles.slant}></div>
 			{/* <h3 className="section-3-subsection">PROFESSIONAL PROJECTS</h3>
 			<div className="projects-professional">	
 				{projects.map(project => {
@@ -56,8 +80,8 @@ export default function SectionProjects(props) {
 						<ProjectCard 
 						project={project} 
 						key={project.key}
-						projectStyle={projectStyle}
-						projectLinks={projectLinks}/>
+						projectStyle={styles.projectCard}
+						projectLinks={styles.projectLinks}/>
 					)} else 
 					return null;
 				})}

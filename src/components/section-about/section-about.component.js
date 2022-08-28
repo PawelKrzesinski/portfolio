@@ -54,8 +54,8 @@ export default function SectionAbout(){
 					delay={0.3}
 					ease="circIn" >
 					<h2 style={text}>
-						I am experienced in various technologies like Angular and Nodejs/Nestjs
-						or testing environments like Jest or Jasmine.
+						I am experienced in various fantastic technologies like Angular 
+						and Nodejs/Nestjs or testing environments like Jest or Jasmine.
 						You can read more about that in the "Skills" section.
 					</h2>		
 					</MotionAnimate>

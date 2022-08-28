@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { ThemeContext } from '../theme-provider/theme-provider.component'
 import SkillCard from './skill-card/skill-card.component';
 import './section-skills.component.css'
@@ -6,24 +6,49 @@ import './section-skills.component.css'
 
 export default function SectionSkills(props) {
 
-	const state = useContext(ThemeContext)
+	const themeState = useContext(ThemeContext)
 	
+	const initialState = {
+		skills: [],
+	};
+	const [state, setState] = useState(initialState);
+
+	const getSkillsData = () => {
+		fetch("skills.json", {
+			headers: {
+				"Content-Type": "application/json",
+				Accept: "application/json",
+			},
+		})
+			.then((res) => {
+				return res.json();
+			})
+			.then((data) => {
+				 return setState({...state, skills: data.skills });
+			});
+	};
+
+	useEffect(getSkillsData, [])
+	
+	
+	const skills = state.skills;
+
+
 	const section4 = {
-		backgroundColor: state.theme.primary,	
-		color: state.theme.text
+		backgroundColor: themeState.theme.primary,	
+		color: themeState.theme.text
 	}
 
 	const slant = {
-		borderRightColor: state.theme.slantPrimary
+		borderRightColor: themeState.theme.primary
 	}
 
 	const skillCardStyles = {
-		backgroundColor: state.theme.secondary,
-		boxShadow: state.theme.BoxShadow
+		backgroundColor: themeState.theme.secondary,
+		boxShadow: themeState.theme.BoxShadow
 	}
 
 
-	const skills = props.skills;
 
 	return(
 		<div className="section-4" id="skills" style={section4}>
