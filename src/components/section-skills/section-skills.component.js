@@ -33,27 +33,26 @@ export default function SectionSkills(props) {
 	
 	const skills = state.skills;
 
-
-	const section4 = {
-		backgroundColor: themeState.theme.primary,	
-		color: themeState.theme.text
-	}
-
-	const slant = {
-		borderRightColor: themeState.theme.primary
-	}
-
-	const skillCardStyles = {
-		backgroundColor: themeState.theme.secondary,
-		boxShadow: themeState.theme.BoxShadow
+	const styles = {
+		section: {
+			backgroundColor: themeState.theme.primary,	
+			color: themeState.theme.quaternary || themeState.theme.tetriary
+		},
+		slant: {
+			borderRightColor: themeState.theme.primary
+		},
+		skillCard: {
+			backgroundColor: themeState.theme.secondary,
+			boxShadow: themeState.theme.boxShadow
+		}
 	}
 
 
 
 	return(
-		<div className="section-4" id="skills" style={section4}>
+		<div className="section-4" id="skills" style={styles.section}>
 			<h3 className='section-title'>SKILLS:</h3>
-			<div className="section-slant" style={slant}></div>
+			<div className="section-slant" style={styles.slant}></div>
 			<h4>
 				I have experience in many different technologies. I am working with Angular on daily basis and know other frameworks, libraries and programming paradigms (e.g., OOP, FP).
 				I can develop mobile applications, responsive websites(including mobile-first approach) and web applications.
@@ -65,7 +64,7 @@ export default function SectionSkills(props) {
 					<SkillCard 
 					skill={skill} 
 					key={skill.key}
-					skillCardStyles={skillCardStyles}/>
+					skillCardStyles={styles.skillCard}/>
 				)
 			})}
 			</div>
