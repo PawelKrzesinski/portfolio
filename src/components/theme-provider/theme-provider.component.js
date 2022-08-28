@@ -1,18 +1,9 @@
 import React, { useState } from 'react'
 
-export const ThemeContext = React.createContext({
-	theme: {
-		type: 'light',
-		primary: 'white',
-		text: 'black'
-	},
-	setTheme: () => {}
-})
+export const ThemeContext = React.createContext({})
 
 export const ThemeContextProvider = props => {
 
-	
-	
 	const theme = {
 		light: {
 			type: 'light',
