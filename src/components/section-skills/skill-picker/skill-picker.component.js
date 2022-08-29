@@ -1,34 +1,63 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { ThemeContext } from 'styled-components';
 import './skill-picker.component.css'
 
-export default function SkillPicker(component) {
-    // const {menuState, setMenuState} = useState('deactivated')
-	console.log(component)
-    let iconsArr = Array.from(document.querySelectorAll('.icons'));
+export default function SkillPicker() {
+    let iconsArr = Array.from(document.querySelectorAll('.skill-icons'));
+
+
+    const initialState = {
+		skills: [],
+		skillsMenuOpen: false,
+	};
+	const [state, setState] = useState(initialState);
+
+	const getSkillsData = () => {
+		fetch("skills.json", {
+			headers: {
+				"Content-Type": "application/json",
+				Accept: "application/json",
+			},
+		})
+			.then((res) => {
+				return res.json();
+			})
+			.then((data) => {
+				 return setState({...state, skills: data.skills });
+			});
+	};
+
+	useEffect(getSkillsData, [])
     
     function changeMenuState() {
-        console.log()
-        if(component.state === 'deactivated'){
-            component.state.setState({state: 'activated'});
-            return expandIcons();
+        if(!state.skillsMenuOpen){
+            setState({...state, skillsMenuOpen: true });
+            return openMenu();
         }
+        setState({...state, skillsMenuOpen: false });
+        return closeMenu()
     }
     
-    function expandIcons(){
+    function openMenu() {
         iconsArr.forEach((icon) => {
         const iconPos = iconsArr.indexOf(icon) + 1;
         const iconsLength = iconsArr.length;
         icon.style.transitionDelay = `calc(0.05s * ${iconPos})`
         return icon.style.transform = `rotate(calc(360deg/${iconsLength} * ${iconPos}))`
-        // return icon.style.transform = 'rotate(0deg) translateX(150px)';
-      })
+    })
+}
+
+function closeMenu() {
+    iconsArr.forEach((icon) => {
+        return icon.style.transform = 'rotate(0deg) translateX(150px)';
+        })
     }
+
 
     return (
         <div className='skill-picker-content'>
             <div className="plerp">
-                <div className={`toggle ${component.state}`} onClick={changeMenuState}>+</div>
+                <div className="toggle" onClick={changeMenuState}>+</div>
                 <div className="skill-icons">1</div>
                 <div className="skill-icons">2</div>
                 <div className="skill-icons">3</div>
