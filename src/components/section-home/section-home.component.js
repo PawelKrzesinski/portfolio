@@ -12,11 +12,4 @@ export default function SectionHome() {
 		</div>
 	)
 }
-
-
-
-
-
-
-
 				

@@ -1,49 +1,102 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { ThemeContext } from '../theme-provider/theme-provider.component'
 import Form from './form/form.component';
 import spinner from '../../images/Spinner-react-biggest.gif';
 import './section-contact.component.css';
 
 export default function SectionContact(props) {
+	const initialState = {
+		yourName: "",
+		topic: "",
+		email: "",
+		comment: "",
+		submitResult: "",
+	};
+	const [state, setState] = useState(initialState);
+	const themeState = useContext(ThemeContext)
 	
-	const state = useContext(ThemeContext)
-	
-	const section5 = {
-		backgroundColor: state.theme.secondary,
-		color: state.theme.text
+	const styles = {
+		section:{
+			backgroundColor: themeState.theme.secondary,
+			color: themeState.theme.quaternary || themeState.theme.tetriary,
+		},
+		slant:{
+			borderRightColor: themeState.theme.secondary,
+			borderTopColor: themeState.theme.primary
+		},
+		inputTextColor:{
+			color: themeState.theme.quaternary || themeState.theme.tetriary,
+		},
+		submitBtn:{
+			color: themeState.theme.quaternary || themeState.theme.tetriary,
+			backgroundColor: themeState.theme.primary,
+			borderColor: themeState.theme.tetriary
+		},
 	}
 
-	const slant = {
-		borderRightColor: state.theme.slantSecondary,
-		borderTopColor: state.theme.slantPrimary
-	}
-	const inputTextColor = {
-		color: state.theme.LinksText
-	}
-	const formBtnStyle = {
-		color: state.theme.text,
-		backgroundColor: state.theme.primary,
-		borderColor: state.theme.LinksText
-	}
+	const handleChange = (e) => {
+		setState({...state, [e.target.name]: e.target.value });
+	};
+
+	const handleSubmit = async (e) => {
+		const loading = document.querySelector(".spinner");
+		loading.style.display = "block";
+		e.preventDefault();
+		const response = await fetch("https://pawel-krzesinski.co.uk/api/send", {
+			method: "POST",
+			body: JSON.stringify(state),
+			headers: {
+				Accept: "application/json",
+				"Content-type": "application/json",
+			},
+		})
+		response.then((response) => {
+			loading.style.display = "none";
+			if (!response.ok) {
+				console.error(response);
+				console.log("Message not sent");
+				setState({
+					submitResult:
+						"Something went wrong. Try again or contact me through email at the bottom of the page.",
+				});
+			} else {
+				resetForm();
+				console.log("Message sent");
+				setState({ submitResult: "Message has been sent!" });
+			}
+		});
+	};
+
+	const resetForm = () => {
+		setState({
+			yourName: "",
+			topic: "",
+			email: "",
+			comment: "",
+		});
+		Array.from(document.querySelectorAll(".inputFields")).forEach((field) => {
+			field.value = "";
+		});
+	};
 	
 	return(
-		<div className="section-5" id="contact" style={section5}>
-			<div className="section-slant" style={slant}></div>
+		<div className="section-5" id="contact" style={styles.section}>
+			<div className="section-slant" style={styles.slant}></div>
 			<h3 className='section-title'>CONTACT ME</h3>
 			<Form 
-			onSubmit={props.onSubmit}
-			changed={props.changed}
+			onSubmit={handleSubmit}
+			changed={handleChange}
 			method="POST"
-			inputTextColor={inputTextColor}
+			inputTextColor={styles.inputTextColor}
 			/>
 			<img src={spinner} alt="Loading..." className="spinner"/>
 			<button 
 				type="submit" 
 				id="submit" 
 				form="contact-form"
-				style={formBtnStyle}
+				style={styles.submitBtn}
 			>Submit</button>
-			<p>{props.wasMsgSent}</p>
+			<p>{state.submitResult}</p>
 		</div>
 	)
 }
