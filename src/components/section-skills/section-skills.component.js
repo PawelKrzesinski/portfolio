@@ -39,16 +39,7 @@ export default function SectionSkills(props) {
 			</h4>
 			<h4>This is my full skillset in detail: </h4>
 			<SkillPicker />
-			{/* <div className="skills-gridbox">
-			{skills.map(skill => {
-				return(
-					<SkillCard 
-					skill={skill} 
-					key={skill.key}
-					skillCardStyles={styles.skillCard}/>
-				)
-			})}
-			</div> */}
+	
 		</div>
 	)
 }
