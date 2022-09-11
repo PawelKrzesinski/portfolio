@@ -1,19 +1,10 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { ThemeContext } from '../theme-provider/theme-provider.component'
-// import SkillCard from './skill-card/skill-card.component';
 import './section-skills.component.css'
-import SkillPicker from './skill-picker/skill-picker.component';
-import ReactDOM from "react-dom";
-
-
+import SkillDisplay from './skill-display/skill-display.component.js';
 
 export default function SectionSkills(props) {
-
 	const themeState = useContext(ThemeContext)
-	
-
-	
-
 	const styles = {
 		section: {
 			backgroundColor: themeState.theme.primary,	
@@ -28,27 +19,20 @@ export default function SectionSkills(props) {
 		}
 	}
 
-
 	return(
 		<div className="section-4" id="skills" style={styles.section}>
-			<h3 className='section-title'>SKILLS:</h3>
+			<h3 className='section-title'>SKILLS</h3>
 			<div className="section-slant" style={styles.slant}></div>
 			<h4>
-				I have experience in many different technologies. I am working with Angular on daily basis and know other frameworks, libraries and programming paradigms (e.g., OOP, FP).
-				I can develop mobile applications, responsive websites(including mobile-first approach) and web applications.
+        I am currently working with Angular for the Frontend and NestJS for the Backend on daily basis.
+        I am also skilled in other frameworks, libraries and programming paradigms (e.g., OOP, FP). <br></br><br></br>
+				I know how to develop mobile applications, responsive websites(including mobile-first approach) and web applications.
 			</h4>
-			<h4>This is my full skillset in detail: </h4>
-			<SkillPicker />
+			<SkillDisplay />
 	
 		</div>
 	)
 }
-
-ReactDOM.render(<h1>PLERP</h1>
-// <SkillPicker />
-, document.getElementById('root'))
-
-
 
 
 
