@@ -13,6 +13,7 @@ export const ThemeContextProvider = props => {
 			navbar: 'rgba(245, 245, 245, 0.8)',
 			border: '#101010',
 			boxShadow: '0px 0px 5px #000000',
+      iconsBG: 'rgba(25, 25, 25, 0.1)'
 		},
 		dark: {
 			type: 'dark',
@@ -23,6 +24,7 @@ export const ThemeContextProvider = props => {
 			navbar: 'rgba(10, 10, 10, 0.8)',
 			border: '#faebd7',
 			boxShadow: '0px 0px 5px #00d8ff',
+      iconsBG: 'rgba(25, 25, 25, 0.3)'
 		},
 	}
 	

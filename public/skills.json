@@ -3,32 +3,104 @@
 		{
 			"skill" : "Javascript",
 			"icon": "./images/icons/js.svg",
-			"desc": "My primary programming language. I used it in all my projects, solved challenges, and worked with it daily since I started coding. I have learned Object-Oriented Programming, Function-Oriented Programming, Promises, and many other techniques.",
-			"key": "01"
+      "score": "8/10",
+      "type": "Frontend"
+		},
+    {
+      "skill" : "Angular",
+      "icon": "./images/icons/angular.png",
+      "score": "8/10",
+      "type": "Frontend"
+    },
+		{
+      "skill" : "PrimeNG",
+			"icon": "./images/icons/primeng.png",
+      "score": "8/10",
+      "type": "Frontend"
 		},
 		{
-			"skill" : "ReactJS",
-			"icon": "./images/icons/react.svg",
-			"desc": "I created this portfolio using React. Thanks to its flexible component-based functionality, it is easy to maintain and it's incredibly fast to load.",
-			"key": "02"
+      "skill" : "Ionic",
+			"icon": "./images/icons/ionic.png",
+      "score": "8/10",
+      "type": "Frontend"
 		},
+    {
+      "skill" : "ReactJS",
+      "icon": "./images/icons/react.svg",
+      "score": "5/10",
+      "type": "Frontend"
+    },
+    {
+      "skill" : "CSS3",
+      "icon": "./images/icons/css.svg",
+      "score": "8/10",
+      "type": "Frontend"
+    },
+    {
+      "skill" : "HTML5",
+      "icon": "./images/icons/html.svg",
+      "score": "8/10",
+      "type": "Frontend"
+    },
 		{
 			"skill" : "NodeJS",
 			"icon": "./images/icons/nodejs.svg",
-			"desc": "Node.js is a back-end Javascript library that helped me in multiple projects, whether it was to run a server, hide an API key, or send emails.",
-			"key": "03"
+      "score": "6/10",
+      "type": "Backend"
 		},
 		{
-			"skill" : "CSS3",
-			"icon": "./images/icons/css.svg",
-			"desc": "Many hours spent while working with CSS has taught me a lot about design. I learned animations, transitions, responsiveness to all different kinds of devices.",
-			"key": "04"
+			"skill" : "NestJS",
+			"icon": "./images/icons/nestjs.svg",
+      "score": "6/10",
+      "type": "Backend"
 		},
 		{
-			"skill" : "HTML5",
-			"icon": "./images/icons/html.svg",
-			"desc": "Very base of any website. HTML is like a human skeleton, it gives the core structure of a web page, but you can shape it however you want !",
-			"key": "05"
+			"skill" : "Express",
+			"icon": "./images/icons/express-js.png",
+      "score": "4/10",
+      "type": "Backend"
+		},
+		{
+			"skill" : "DynamoDB",
+			"icon": "./images/icons/DynamoDB.png",
+      "score": "5/10",
+      "type": "Backend"
+		},
+		{
+			"skill" : "Jest",
+			"icon": "./images/icons/jest.png",
+      "score": "7/10",
+      "type": "Testing"
+		},
+		{
+			"skill" : "Jasmine",
+			"icon": "./images/icons/jasmine.png",
+      "score": "7/10",
+      "type": "Testing"
+		},
+		{
+			"skill" : "Docker",
+			"icon": "./images/icons/docker.png",
+      "score": "4/10",
+      "type": "Other"
+		},
+		{
+			"skill" : "Git",
+			"icon": "./images/icons/git.png",
+      "score": "7/10",
+      "type": "Other"
+		},
+		{
+			"skill" : "VSCode",
+			"icon": "./images/icons/vscode.png",
+      "score": "7/10",
+      "type": "Other"
+		},
+		{
+			"skill" : "Typescript",
+			"icon": "./images/icons/typescript.png",
+      "score": "8/10",
+      "type": "Other"
 		}
 	]
 }
