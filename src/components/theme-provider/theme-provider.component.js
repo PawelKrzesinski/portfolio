@@ -11,9 +11,8 @@ export const ThemeContextProvider = props => {
 			secondary: '#c0c0c0',
 			tetriary: '#000000',
 			navbar: 'rgba(245, 245, 245, 0.8)',
-			border: '#101010',
 			boxShadow: '0px 0px 5px #000000',
-      iconsBG: 'rgba(25, 25, 25, 0.1)'
+      inputBorder: 'rgba(15, 15, 15, 0.3)',
 		},
 		dark: {
 			type: 'dark',
@@ -22,9 +21,8 @@ export const ThemeContextProvider = props => {
 			tetriary: '#00d8ff',
 			quaternary: '#faebd7',
 			navbar: 'rgba(10, 10, 10, 0.8)',
-			border: '#faebd7',
 			boxShadow: '0px 0px 5px #00d8ff',
-      iconsBG: 'rgba(25, 25, 25, 0.3)'
+      inputBorder: 'rgba(0, 216, 255, 0.3)',
 		},
 	}
 	

@@ -1,13 +1,14 @@
 @media only screen and (min-width: 300px){
-    .icons-box{
-        width: 250px;
-        height: 80px;
+    .navbar-bottom-icons-box{
+        width: 200px;
+        height: 60px;
         border-radius: 5px 5px 0 0;
         border-width: 1px;
         border-style: solid;
         border-bottom: none !important;
         transform: translateY(1px);
         position: sticky;
+        left: 0px;
         bottom: 0;
         display: flex;
         justify-content: center;
@@ -17,28 +18,24 @@
         margin-left: auto;
         margin-right: auto;
     }
-    .icons{
+    .navbar-bottom-icons{
         width: 40px;
     }    
+    .theme-switch-box p{
+      margin: 0;
+    }
 }
-
 @media only screen and (min-width: 1024px){
-    .icons-box{
-		transform: translateY(2px);
-	}
-    .icons:hover{
-		transition: all 0.2s linear;
-		transform: scale(1.2);
-	}
-}
+  .navbar-bottom-icons-box{
+    width: 220px;
+    height: 80px;
+  }
 
-@media only screen and (min-width: 4000px){
-    .icons-box{
-		width: 450px;
-		height: 150px;
-		transform: translateY(3px);
-	}
-	.icons{
-		width: 75px;
+  .navbar-bottom-icons{
+    width: 50px;
+  }  
+  .navbar-bottom-icons:hover{
+		transition: all 0.2s linear;
+		transform: scale(1.3);
 	}
 }

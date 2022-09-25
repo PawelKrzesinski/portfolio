@@ -13,14 +13,14 @@ export default function Footer(){
 		footer: { 
 			backgroundColor: themeState.theme.primary,
 			color: themeState.theme.quaternary || themeState.theme.tetriary,
-			borderColor: themeState.theme.border
+			borderColor: themeState.theme.tetriary
 		}
 	} 
 
 	return(
 		<div className="footer" style={	styles.footer }>
-			<h5 className="email">krzesinskiwebsites@outlook.com</h5>
-			<h6 className='copyrights' id='copyrights'>{copyrights()}</h6>
+			<h5>krzesinskiwebsites@outlook.com</h5>
+			<h6>{copyrights()}</h6>
 		</div>
 	)
 }

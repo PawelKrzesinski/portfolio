@@ -5,18 +5,12 @@
 		margin-left: auto;
 	}
 	.theme-switch-box{
-		font-size: 14px;
-		margin-left: 20px;
+		font-size: 12px;
+		margin-left: 10px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		height: 50px;
-	}
-	.theme-switch-box p{
-		position: relative;
-		top: 0px;
-		margin: 0;
 	}
 	#switch{
 		width: 0;
@@ -25,8 +19,8 @@
 	}
 	.theme-switch label{
 		cursor: pointer;
-		width: 60px;
-		height: 20px;
+		width: 35px;
+		height: 16px;
 		background: gray;
 		display: block;
 		border-radius: 40px;
@@ -36,21 +30,21 @@
 	}
 	.theme-switch label::after{
 		content: '';
-		width: 30px;
-		height: 30px;
+		width: 22px;
+		height: 22px;
 		background-color: #00d8ff;
 		position: absolute;
-		top: -8px;
+		top: -5px;
 		left: -5px;
-		border-radius: 30px;
-		border: 3px solid black;
+		border-radius: 50%;
+		border: 2px solid black;
 		transition: all 0.3s linear;
 	}
 	#switch:checked + label {
 		background-color: #00d8ff;
 	}
 	#switch:checked + label::after{
-		transform: translateX(100%);
+		transform: translateX(20px);
 		background-color: gray;
 	}
 	#switch:not(:checked) + label::after{
@@ -59,23 +53,15 @@
 }
 
 @media only screen and (min-width: 1024px){
-	.theme-switch label:hover::after{
-		transform: scale(1.1);
-		background-color: #00acca;
-	}
-}
-
-@media only screen and (min-width: 4000px){
-	.theme-switch-box{
-		font-size: 30px;
-	}	
-	.theme-switch label{
-		top: -30px;
-		width: 80px;
-		height: 30px;
-	}
-	.theme-switch label::after{
-		width: 40px;
-		height: 40px;
-	}
+  .theme-switch label{
+    width: 50px;
+    height: 20px;
+  }
+  .theme-switch label::after{
+		width: 26px;
+		height: 26px;
+  }
+  #switch:checked + label::after{
+		transform: translateX(30px);
+  }
 }
