@@ -22,24 +22,26 @@ const transporter = nodemailer.createTransport(transport);
 
 transporter.verify((error, success) => {
 	if(error){
-		console.log(error);
+		console.log(error.message);
+    throw new Error(error.message)
 	} else {
 		console.log('Server is ready to take messages !');
 	}
 })
 
 router.post('/send', (req, res, next) => {
-	const name = req.body.yourName;
-	var topic = req.body.topic;
-	const email = req.body.email;
-	const comment = req.body.comment;
-	const content = `Name: ${name} \nTopic: ${topic} \nE-mail: ${email} \nComment: ${comment}`;
-	console.log(content);
+  const payload = {
+    name: req.body.yourName,
+    subject: req.body.subject,
+    email: req.body.email,
+    comment: req.body.comment,
+  }
+	const content = `Name: ${payload.name} \nSubject: ${payload.subject} \nE-mail: ${payload.email} \nComment: ${payload.comment}`;
 	const mail = {
-		from: name,
+		from: payload.name,
 		to: creds.USER,
 		subject: 'New message from Contact Form',
-		text: content
+		text: payload.content
 	}
 
 	transporter.sendMail(mail, (err, data) => {
