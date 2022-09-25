@@ -1,20 +1,27 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useRef, useEffect } from 'react';
 import { ThemeContext } from '../theme-provider/theme-provider.component'
 import Form from './form/form.component';
-import spinner from '../../images/Spinner-react-biggest.gif';
 import './section-contact.component.css';
 
 export default function SectionContact(props) {
-	const initialState = {
-		yourName: "",
-		topic: "",
+	const [form, setForm] = useState({
+		name: "",
+		subject: "",
 		email: "",
-		comment: "",
+		message: "",
 		submitResult: "",
-	};
-	const [state, setState] = useState(initialState);
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState('');
 	const themeState = useContext(ThemeContext)
-	
+  const spinner = isLoading ? <img src={require("../../images/Spinner-react-biggest.gif")} alt="Loading image" className="spinner"/> : null;
+  const inputFields =  {
+    name: useRef(),
+    email: useRef(),
+    subject: useRef(),
+    message: useRef(),
+  }
 	const styles = {
 		section:{
 			backgroundColor: themeState.theme.secondary,
@@ -24,79 +31,87 @@ export default function SectionContact(props) {
 			borderRightColor: themeState.theme.secondary,
 			borderTopColor: themeState.theme.primary
 		},
-		inputTextColor:{
-			color: themeState.theme.quaternary || themeState.theme.tetriary,
-		},
 		submitBtn:{
-			color: themeState.theme.quaternary || themeState.theme.tetriary,
+      color: themeState.theme.quaternary || themeState.theme.tetriary,
 			backgroundColor: themeState.theme.primary,
 			borderColor: themeState.theme.tetriary
 		},
+    inputs:{
+      color: themeState.theme.quaternary || themeState.theme.tetriary,
+      borderColor: themeState.theme.inputBorder
+    },
+    inputBorderAnimation: {
+      borderColor: themeState.theme.tetriary,
+    }
 	}
 
-	const handleChange = (e) => {
-		setState({...state, [e.target.name]: e.target.value });
+	const handleInputChange = (e) => {
+		setForm({...form, [e.target.name]: e.target.value });
 	};
 
-	const handleSubmit = async (e) => {
-		const loading = document.querySelector(".spinner");
-		loading.style.display = "block";
-		e.preventDefault();
-		const response = await fetch("https://pawel-krzesinski.co.uk/api/send", {
-			method: "POST",
-			body: JSON.stringify(state),
-			headers: {
-				Accept: "application/json",
-				"Content-type": "application/json",
-			},
-		})
-		response.then((response) => {
-			loading.style.display = "none";
-			if (!response.ok) {
-				console.error(response);
-				console.log("Message not sent");
-				setState({
-					submitResult:
-						"Something went wrong. Try again or contact me through email at the bottom of the page.",
-				});
-			} else {
-				resetForm();
-				console.log("Message sent");
-				setState({ submitResult: "Message has been sent!" });
-			}
-		});
-	};
+  useEffect(() => {
+    if(!isSubmitted) return;
+    const handleSubmit = async () => {
+      setIsLoading(true);
+      const timeout = 1000
+      const controller = new AbortController();
+      const id = setTimeout(() => controller.abort(), timeout)
+      try{
+        await fetch("https://pawel-krzesinski.co.uk/api/send", {
+          timeout: timeout,
+          signal: controller.signal,
+          method: "POST",
+          body: JSON.stringify(form),
+            headers: {
+              Accept: "application/json",
+              "Content-type": "application/json",
+            },
+          })
+          clearTimeout(id);
+          setIsSuccess('Message has been sent!')
+          resetForm();
+        } catch (err) {
+          setIsSuccess('Something went wrong. Try again or contact me through krzesinskiwebsites@outlook.com')
+          console.log("Message not sent");
+          console.error(err);
+        }
+        setIsSubmitted(false);
+        setIsLoading(false);
+    };
+    handleSubmit();
+  }, [isSubmitted, form])
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitted(true)
+    console.log('Form data: ', form)
+  }
 	const resetForm = () => {
-		setState({
-			yourName: "",
-			topic: "",
-			email: "",
-			comment: "",
-		});
-		Array.from(document.querySelectorAll(".inputFields")).forEach((field) => {
-			field.value = "";
-		});
+    inputFields.email.current.value = '';
+    inputFields.message.current.value = '';
+    inputFields.name.current.value = '';
+    inputFields.subject.current.value = '';
 	};
-	
+
 	return(
 		<div className="section-5" id="contact" style={styles.section}>
 			<div className="section-slant" style={styles.slant}></div>
 			<h3 className='section-title'>CONTACT ME</h3>
 			<Form 
 			onSubmit={handleSubmit}
-			changed={handleChange}
+			changed={handleInputChange}
 			method="POST"
-			inputTextColor={styles.inputTextColor}
+      inputFields={inputFields}
+			styles={styles}
 			/>
-			<img src={spinner} alt="Loading..." className="spinner"/>
 			<button 
 				type="submit" 
 				id="submit" 
 				form="contact-form"
 				style={styles.submitBtn}
 			>Submit</button>
-			<p>{state.submitResult}</p>
+      {spinner}
+			<p>{isSuccess}</p>
 		</div>
 	)
 }
