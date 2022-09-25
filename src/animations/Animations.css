@@ -56,3 +56,12 @@
 		text-shadow: 0 0 5px antiquewhite, 0 0 8px  antiquewhite;
 	}
 }
+
+@keyframes blink {
+  0%, 58%, 70%, 77%, 83%, 89%, 100% {
+		text-shadow: 0px 0px 2px #00d8ff, 0px 0px 2px #00d8ff, 0px 0px 2px #00d8ff, 0px 0px 2px #00d8ff, 0px 0px 2px #00d8ff, 0px 0px 2px #00d8ff, 0px 0px 2px #00d8ff;
+  }
+  59%, 69%, 74%, 80%, 86% {
+    text-shadow: none;
+  }
+}

@@ -6,22 +6,23 @@ const form = (props) =>{
 		<form id="contact-form" onSubmit={props.onSubmit}>
 			<div className="form-box" >
 				<input
-				className="inputFields"
+				className="form-input-fields"
 				placeholder=" " 
 				type='text' 
-				value={props.yourName}
-				name='yourName' 
+				value={props.name}
+				name='name' 
 				onChange={props.changed}
 				required={true}
 				autoComplete="off"
-				style={props.inputTextColor}
+				style={props.styles.inputs}
+        ref={props.inputFields.name}
 				/>
 				<label htmlFor="yourName">Your name:</label>
-				<span className="animate-input-border"></span>
+				<span className="animate-input-border" style={props.styles.inputBorderAnimation}></span>
 			</div>
 			<div className="form-box">
 				<input
-				className="inputFields"
+				className="form-input-fields"
 				placeholder=" " 
 				type='email' 
 				value={props.email}
@@ -29,39 +30,42 @@ const form = (props) =>{
 				onChange={props.changed}
 				required={true}
 				autoComplete="off"
-				style={props.inputTextColor}
+				style={props.styles.inputs}
+        ref={props.inputFields.email}
 				/>
 				<label htmlFor="email">E-mail address:</label>
-				<span className="animate-input-border"></span>
+				<span className="animate-input-border" style={props.styles.inputBorderAnimation}></span>
 			</div>
 			<div className="form-box">
 				<input
-				className="inputFields"
+				className="form-input-fields"
 				placeholder=" " 
 				type='text' 
-				value={props.topic}
-				name='topic' 
+				value={props.subject}
+				name='subject' 
 				onChange={props.changed}
 				autoComplete="off"
-				style={props.inputTextColor}
+				style={props.styles.inputs}
+        ref={props.inputFields.subject}
 				/>
-				<label htmlFor="topic">Topic:</label>
-				<span className="animate-input-border"></span>
+				<label htmlFor="subject">Subject:</label>
+				<span className="animate-input-border" style={props.styles.inputBorderAnimation}></span>
 			</div>
 			<div className="form-box">
 				<textarea
-				className="inputFields"
+				className="form-text-area"
 				placeholder=" " 
-				name="comment" 
-				value={props.comment}
+				name="message" 
+				value={props.message}
 				form="contact-form" 
 				onChange={props.changed}
 				required={true}
 				autoComplete="off"
-				style={props.inputTextColor}
+				style={props.styles.inputs}
+        ref={props.inputFields.message}
 				/>
 				<label htmlFor="comment">Your message:</label>
-				<span className="animate-input-border"></span>
+				<span className="animate-input-border" style={props.styles.inputBorderAnimation}></span>
 			</div>		
 		</form>
 	)

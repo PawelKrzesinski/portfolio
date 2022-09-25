@@ -30,11 +30,9 @@ export default function SectionAbout(){
 	return (
 		<div className="section-2" id="about" style={styles.section}>
 			<div className="section-slant" style={styles.slant}></div>
+				<h3 id='about-me' className='section-title'>ABOUT ME</h3>
 			<div className='section-2-content-container'>
-				<div>
-					<h3 id='about-me' className='section-title'>ABOUT ME</h3>
-					<img src="./images/myPhoto2.jpg" alt="" className="my-photo"/>
-				</div>
+				<img src="./images/myPhoto2.jpg" alt="picture" className="my-photo"/>
 				<div className="about-me-text-container">
 					<MotionAnimate
 					animation="fadeInUp"

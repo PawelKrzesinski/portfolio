@@ -1,157 +1,107 @@
 @media only screen and (min-width: 300px){
+  .form-box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    padding-top: 30px;
+    overflow: hidden;
+  }
 	.section-5 label {
 		text-align: start;
 		padding-top: 10px;
 		position: absolute;
 		z-index: 0;
-		height: 50px;
 		width: 260px;
-		transition: all 0.3s ease-in-out;
-		background-color: transparent;
+		transition: all 0.4s ease;
 	}
-	.section-5 form input{
+	.form-input-fields{
 		position: relative;
 		display: inline-block;
 		width: 260px;
 		height: 50px;
-		font-size: 18px;
+		font-size: 16px;
 		background-color: transparent;		
 		outline: none;
 		border: none;
-		transition: all .15s linear;
-		z-index: 1;
-		border-bottom: 1px solid darkgray;
-	}
-	.section-5 form textarea {
+    z-index: 1;
+    border-bottom: solid 1px;
+  }
+	.form-text-area {
 		background-color: transparent;
 		height: 50px;
 		border: none;
 		resize: none;	
 		outline: none;
-		font-size: 18px;
+		font-size: 16px;
 		z-index: 1;
-		border-bottom: 1px solid darkgray;
-		transition: all .15s linear;
+    border-bottom: solid 1px; 
+    transition: all 0.5s ease-in-out;
 	}
 	.animate-input-border {
 		position: absolute;
 		bottom: 0;
 		width: 260px;
 		height: 0 !important;
-		border-bottom: solid 3px #00d8ff;  
-		transform: scaleX(0);
-		transition: transform 150ms ease-in-out;
+		border-bottom: solid 1px;
+		transform: translateX(-100%);
+		transition: transform 0.4s ease;
 	}
-	.section-5 form textarea:focus, .section-5 form input:focus{
-		border: none;
-	}
-	.section-5 form textarea:focus{
+
+	.form-text-area:focus{
 		height: 150px;
 	}
 
-	.section-5 form input:focus ~ .animate-input-border,
-	.section-5 form textarea:focus ~ .animate-input-border{
-		transform: scaleX(1);
+	.form-input-fields:focus ~ .animate-input-border,
+	.form-text-area:focus ~ .animate-input-border{
+    transform: translateX(0%);
 	}
-	.section-5 form input::placeholder, .section-5 form textarea::placeholder{
-		color: transparent;
-	}
-	.section-5 form input:focus ~ label,
-	.section-5 form input:not(:placeholder-shown) ~ label{
+
+	.form-input-fields:focus ~ label,
+	.form-input-fields:not(:placeholder-shown) ~ label{
 		padding: 0;
 		transform: translateY(-25px);
 		font-size: 14px;
 	}
 
-	.section-5 form textarea:focus ~ label,
-	.section-5 form textarea:not(:placeholder-shown) ~ label{
+	.form-text-area:focus ~ label,
+	.form-text-area:not(:placeholder-shown) ~ label{
 		padding: 0;
-		transform: translateY(-30px);
+		transform: translateY(-25px);
 		font-size: 14px;
 		height: 150px !important;
 	}
-	.section-5 form textarea:not(:placeholder-shown){
+	.form-text-area:not(:placeholder-shown){
 		height: 150px !important;
 	}
-	.section-5 form textarea:not(:focus) ~ label{
+	.form-text-area:not(:focus) ~ label{
 		height: 50px !important;
-	}
-	#contact-form > div:nth-child(5) > label{
-		height: 50px;
-	}
-	.section-5 form textarea:focus ~ #contact-form > div:nth-child(5) > label{
-		height: 150px !important;
-	}
-	.spinner{
-		width: 75px;
-		display: none;
-	}
-	#submit {
-		width: 130px;
-		border-width: 1px;
-		border-radius: 5px;
-		padding: 10px;
-		font-size: 20px;
-		cursor: pointer;
-	}
-
-	.section-5 p{
-		margin-top: 20px;
 	}
 }
 
 @media only screen and (min-width: 1024px){
-	#submit:hover{
-		background-color: transparent;
-		color: #00d8ff;
-		letter-spacing: 1px;
-		transition: all .1s linear;
-	}
-}
-
-@media only screen and (min-width: 4000px){
-	.section-5 label{
-		font-size: 50px;
-		white-space: nowrap;
-	}
-	.section-5 form input{
-		height: 100px;
-		width: 400px;
-		font-size: 50px;
-	}
-	.section-5 form input:focus ~ label,
-	.section-5 form input:not(:placeholder-shown) ~ label{
-		font-size: 25px;
-	}
-	.section-5 form textarea:focus ~ label,
-	.section-5 form textarea:not(:placeholder-shown) ~ label{
-		transform: translateY(-35px);
-		font-size: 25px;
-		height: 300px !important;
-	}
-
-	.section-5 form textarea{
-		height: 100px;
-		width: 400px;
-		font-size: 50px;
-	}
-	.section-5 form textarea:focus{
-		height: 300px !important;
-	}
-	.section-5 form textarea:focus ~ #contact-form > div:nth-child(5) > label{
-		height: 300px !important;
-	}
-	.animate-input-border{
-		width: 400px;
-	}
-	.section-5 p{
-		margin-top: 100px;
-		font-size: 50px;
-	}
-	#submit{
-		margin-top: 50px;
-		width: 400px;
-		font-size: 50px;
-		z-index: 100;
-	}
+  #contact-form {
+    display: grid;
+    grid-template-areas: 
+    "name email subject"
+    ". message .";
+    column-gap: 150px;
+    
+  }
+  #contact-form div:nth-child(1){
+    grid-area: name;
+  }
+  #contact-form div:nth-child(2){
+    grid-area: email;
+  }
+  #contact-form div:nth-child(3){
+    grid-area: subject;
+  }
+  #contact-form div:nth-child(4){
+    width: 260px;
+    grid-area: message;
+    justify-self: center;
+    align-self: center;
+  }
 }

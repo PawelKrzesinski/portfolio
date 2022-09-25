@@ -4,7 +4,6 @@ import "./navbar.component.css";
 
 export default function Navbar() {
 	const themeState = useContext(ThemeContext);
-
 	const styles = {
 		component: {
 			backgroundColor: themeState.theme.navbar,
