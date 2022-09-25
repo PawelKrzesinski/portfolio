@@ -31,7 +31,11 @@ export default function SkillDisplay() {
   const styles = {
     row:{
 			backgroundColor: themeState.theme.secondary,	
-			color: themeState.theme.quaternary || themeState.theme.tetriary
+			color: themeState.theme.quaternary || themeState.theme.tetriary,
+      boxShadow: themeState.theme.boxShadow,
+    },
+    desc: {
+      borderColor: themeState.theme.tetriary,
     }
   }
 
@@ -45,7 +49,7 @@ export default function SkillDisplay() {
             {types.map((type, index) => {
               return (
                 <div className="row" key={index} style={styles.row}>
-                  <div className="description">{type}</div>
+                  <div className="description" style={styles.desc}>{type}</div>
                   <div className="skill-icons-box" >
                     {skills.map((skill, index) => {
                       return skill.type === type ?
