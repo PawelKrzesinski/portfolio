@@ -59,7 +59,7 @@
 
 @keyframes blink {
   0%, 58%, 70%, 77%, 83%, 89%, 100% {
-		text-shadow: 0px 0px 2px #00d8ff, 0px 0px 2px #00d8ff, 0px 0px 2px #00d8ff, 0px 0px 2px #00d8ff, 0px 0px 2px #00d8ff, 0px 0px 2px #00d8ff, 0px 0px 2px #00d8ff;
+		text-shadow: 0px 0px 4px #00d8ff, 0px 0px 8px #00d8ff, 0px 0px 12px #00d8ff, 0px 0px 16px #00d8ff, 0px 0px 20px #00d8ff, 0px 0px 24px #00d8ff, 0px 0px 28px #00d8ff;
   }
   59%, 69%, 74%, 80%, 86% {
     text-shadow: none;

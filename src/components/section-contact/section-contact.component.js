@@ -9,7 +9,6 @@ export default function SectionContact(props) {
 		subject: "",
 		email: "",
 		message: "",
-		submitResult: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);

@@ -50,11 +50,7 @@
 		border: 1px solid #00d8ff;
 		border-radius: 5px;
 		padding: 15px;
-		font-size: 20px;		
-	}
-	.contact-me-btn:hover{
-		color: black !important;
-		background-color: #00d8ff !important;
+		font-size: 20px;
 	}
 }
 
@@ -110,7 +106,10 @@
     height: 300px;
     margin: 0 15px;
   }
-
+  .contact-me-btn:hover{
+		color: black !important;
+		background-color: #00d8ff !important;
+	}
 }
 
 @media only screen and (min-width: 1440px){
@@ -130,8 +129,4 @@
     max-width: 275px;
     padding: 30px;
   }
-  /* .contact-me-btn{
-    font-size: 18px;
-    padding: 14px;
-  } */
 }

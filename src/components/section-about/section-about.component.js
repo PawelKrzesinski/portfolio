@@ -22,7 +22,7 @@ export default function SectionAbout(){
 		},
 		contactBtn:{
 			backgroundColor: themeState.theme.primary,
-			color: themeState.theme.tetriary,
+			color: themeState.theme.quaternary || themeState.theme.tetriary,
 			borderColor: themeState.theme.tetriary,
 		}
 	}
