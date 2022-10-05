@@ -2,7 +2,9 @@ import React, {useContext} from 'react';
 import {ThemeContext} from '../theme-provider/theme-provider.component'
 import ToggleTheme from './toggle-theme/toggle-theme.component'
 import './navbar-bottom.component.css';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 function NavbarBottom(){
 	const themeState = useContext(ThemeContext)
 	const styles = {
@@ -15,11 +17,11 @@ function NavbarBottom(){
 
 	return (
 			<div className="navbar-bottom-icons-box" style={styles.component}>
-				<a href="https://www.linkedin.com/in/pawel-krzesinski-7a4a581a1/" className="social-media-link" target="_blank" rel="noopener noreferrer" >
-					<img src="https://img.icons8.com/nolan/64/linkedin.png" className="navbar-bottom-icons" alt="linkedin icon"/>
+				<a href="https://www.linkedin.com/in/pawel-krzesinski-7a4a581a1/" className="social-media-link" target="_blank" rel="noopener noreferrer"  style={styles.component}>
+          <FontAwesomeIcon icon={faLinkedin} className="navbar-bottom-icons"/>
 				</a>
-				<a href="https://github.com/PawelKrzesinski" className="social-media-link" target="_blank" rel="noopener noreferrer" >
-					<img src="https://img.icons8.com/nolan/64/github.png" className="navbar-bottom-icons" alt="github icon"/>
+				<a href="https://github.com/PawelKrzesinski" className="social-media-link" target="_blank" rel="noopener noreferrer"  style={styles.component}>
+          <FontAwesomeIcon icon={faGithub} className="navbar-bottom-icons"/>
 				</a>
 				<ToggleTheme />
 	</div>
