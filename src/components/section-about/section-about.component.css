@@ -19,7 +19,6 @@
 	.section-2-content-container{
 		margin-bottom: 100px;
 	}
-	
 	.my-photo {
 		width: 225px;
 		height: 225px;
@@ -41,7 +40,6 @@
     border-radius: 5px;
     box-shadow: none !important;
 	}
-
 	.contact-me-container{
 		margin: 40px auto 0;
 	}
@@ -51,6 +49,7 @@
 		border-radius: 5px;
 		padding: 15px;
 		font-size: 20px;
+    transition: 0.4s all linear;
 	}
 }
 

@@ -24,6 +24,7 @@ input, textarea{
 		padding: 10px;
 		font-size: 20px;
 		cursor: pointer;
+    transition: all 0.4s linear;
 	}
 
   #submit:active{
@@ -43,6 +44,5 @@ input, textarea{
   #submit:hover{
 		background-color: rgb(0, 216, 255) !important;
 		color: black !important;
-		transition: all 0.4s linear;
 	}
 }
