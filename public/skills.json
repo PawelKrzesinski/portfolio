@@ -9,19 +9,19 @@
     {
       "skill" : "Angular",
       "icon": "./images/icons/angular.png",
-      "score": "8/10",
+      "score": "7/10",
       "type": "Frontend"
     },
 		{
       "skill" : "PrimeNG",
 			"icon": "./images/icons/primeng.png",
-      "score": "8/10",
+      "score": "7/10",
       "type": "Frontend"
 		},
 		{
       "skill" : "Ionic",
 			"icon": "./images/icons/ionic.png",
-      "score": "8/10",
+      "score": "7/10",
       "type": "Frontend"
 		},
     {
@@ -45,13 +45,13 @@
 		{
 			"skill" : "NodeJS",
 			"icon": "./images/icons/nodejs.svg",
-      "score": "6/10",
+      "score": "5/10",
       "type": "Backend"
 		},
 		{
 			"skill" : "NestJS",
 			"icon": "./images/icons/nestjs.svg",
-      "score": "6/10",
+      "score": "5/10",
       "type": "Backend"
 		},
 		{
@@ -99,7 +99,7 @@
 		{
 			"skill" : "Typescript",
 			"icon": "./images/icons/typescript.png",
-      "score": "8/10",
+      "score": "7/10",
       "type": "Other"
 		}
 	]

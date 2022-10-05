@@ -28,14 +28,15 @@ export default function SectionProjects() {
 		},
 		projectCard: {
 			backgroundColor: themeState.theme.primary,
-			color: themeState.theme.quaternary || themeState.theme.tetriary,
 			boxShadow: themeState.theme.boxShadow
 		},
 		projectLinks: {
 			backgroundColor: themeState.theme.secondary,
-			color: themeState.theme.tetriary,
-			borderColor: themeState.theme.tetriary
-		}
+			color: themeState.theme.quaternary || themeState.theme.tetriary,
+		},
+    borderBottom: {
+      borderBottomColor: themeState.theme.tetriary,
+    },
 		
 	}
 	const getProjectsData = () => {
@@ -58,30 +59,16 @@ export default function SectionProjects() {
 	return(
 		<div className="section-3" id="projects" style={styles.section}>
 			<div className="section-slant section-title" style={styles.slant}></div>
-			{/* <h3 className="section-3-subsection">PROFESSIONAL PROJECTS</h3>
-			<div className="projects-professional">	
-				{projects.map(project => {
-					if(project.professional){									
-						return(
-						<ProjectCard 
-						project={project} 
-						key={project.key}
-						projectStyle={projectStyle}
-						projectLinks={projectLinks}/>
-					)} else 
-					return null;
-				})}
-			</div> */}
 			<h3 className="section-3-subsection section-title">PROJECTS</h3>
-			<div className="projects-hobby">
+			<div className="projects">
 				{projects.map(project => {
 					if(!project.professional){
 						return (
 						<ProjectCard 
 						project={project} 
 						key={project.key}
-						projectStyle={styles.projectCard}
-						projectLinks={styles.projectLinks}/>
+						styles={styles}						
+            />
 					)} else 
 					return null;
 				})}
