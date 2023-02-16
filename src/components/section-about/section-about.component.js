@@ -64,8 +64,7 @@ export default function SectionAbout(){
 					delay={0.6}
 					ease="circIn" >
 					<h2 style={styles.text}>
-						I am available part-time and would love to pick up some extra work.
-						If you need a developer, please feel free to contact me.
+						If you need a developer, please feel free to contact me and we can discuss potential employment.
 				<div className='contact-me-container'>
 					<a className='contact-me-btn' href="#contact" style={styles.contactBtn}>Contact Me</a>
 				</div>
