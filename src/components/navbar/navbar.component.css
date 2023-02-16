@@ -79,8 +79,33 @@
 		font-size: 40px;
 	}
 }
-@media only screen and (min-width: 1800px){
+@media only screen and (min-width: 1440px){
 	.navbar a:not(.logo) {
 		font-size: 20px;
+    position: relative;
+    min-width: 100px;
 	}
+  .navbar a:not(.logo)::after, .navbar a:not(.logo)::before {
+    content: '';
+    opacity: 0;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #00d8ff;
+    transition: all 0.3s ease-in-out;
+    margin: -10px 0;
+  }
+  .navbar a:not(.logo)::after {
+    left: 0;
+    top: 0;
+  }
+  .navbar a:not(.logo)::before {
+    bottom: 0;
+    right: 0;
+  }
+
+  .navbar a:not(.logo):hover::after, .navbar a:not(.logo):hover::before {
+    opacity: 1;
+    width: 100%;
+  }
 }
