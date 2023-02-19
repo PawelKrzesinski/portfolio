@@ -10,14 +10,15 @@
 	}
   .section-4 .section-title{
     margin-top: 50px;
-    padding-bottom: 0;
+
   }
 	.section-4 h4 {
-    margin: 25px 10px;
+    margin: 50px 10px;
     text-align: center;
 		font-weight: 400;
     border-radius: 5px;
     padding: 15px;
+    font-size: 18px;
 	}
 
 }

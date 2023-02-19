@@ -42,7 +42,7 @@ export default function SkillDisplay() {
 	useEffect(getSkillsData, []);
 
   const skills = state.skills;
-  const types = ['Frontend', 'Backend', 'Testing', 'Other']
+  const types = ['Primary', 'Secondary']
 
 	return (
         <div className='skills-container'>
