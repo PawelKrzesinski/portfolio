@@ -27,7 +27,7 @@ export default function SectionSkills(props) {
 			<h3 className='section-title'>SKILLS</h3>
 			<div className='section-slant' style={styles.slant}></div>
 			<h4 style={styles.text}>
-        Currently, I am evolving a SaaS product, working with Angular for the Frontend and NestJS for the Backend.
+        Currently, I am evolving a SaaS product, working with Angular and PrimeNG for the Frontend and NestJS for the Backend.
         I have worked with other frameworks, libraries, mastered various programming paradigms like OOP, FP and created or updated many REST APIs. <br></br><br></br>
 				I know how to develop mobile applications, responsive websites(including a mobile-first approach) and web applications.
 			</h4>

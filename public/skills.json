@@ -1,106 +1,89 @@
 {
 	"skills" :[
 		{
-			"skill" : "Javascript",
+			"name" : "Javascript",
 			"icon": "./images/icons/js.svg",
-      "score": "8/10",
-      "type": "Frontend"
+      "type": "Primary"
 		},
     {
-      "skill" : "Angular",
-      "icon": "./images/icons/angular.png",
-      "score": "7/10",
-      "type": "Frontend"
-    },
-		{
-      "skill" : "PrimeNG",
-			"icon": "./images/icons/primeng.png",
-      "score": "7/10",
-      "type": "Frontend"
-		},
-		{
-      "skill" : "Ionic",
-			"icon": "./images/icons/ionic.png",
-      "score": "7/10",
-      "type": "Frontend"
-		},
-    {
-      "skill" : "ReactJS",
-      "icon": "./images/icons/react.svg",
-      "score": "5/10",
-      "type": "Frontend"
-    },
-    {
-      "skill" : "CSS3",
-      "icon": "./images/icons/css.svg",
-      "score": "8/10",
-      "type": "Frontend"
-    },
-    {
-      "skill" : "HTML5",
-      "icon": "./images/icons/html.svg",
-      "score": "8/10",
-      "type": "Frontend"
-    },
-		{
-			"skill" : "NodeJS",
-			"icon": "./images/icons/nodejs.svg",
-      "score": "5/10",
-      "type": "Backend"
-		},
-		{
-			"skill" : "NestJS",
-			"icon": "./images/icons/nestjs.svg",
-      "score": "5/10",
-      "type": "Backend"
-		},
-		{
-			"skill" : "Express",
-			"icon": "./images/icons/express-js.png",
-      "score": "4/10",
-      "type": "Backend"
-		},
-		{
-			"skill" : "DynamoDB",
-			"icon": "./images/icons/DynamoDB.png",
-      "score": "5/10",
-      "type": "Backend"
-		},
-		{
-			"skill" : "Jest",
-			"icon": "./images/icons/jest.png",
-      "score": "7/10",
-      "type": "Testing"
-		},
-		{
-			"skill" : "Jasmine",
-			"icon": "./images/icons/jasmine.png",
-      "score": "7/10",
-      "type": "Testing"
-		},
-		{
-			"skill" : "Docker",
-			"icon": "./images/icons/docker.png",
-      "score": "4/10",
-      "type": "Other"
-		},
-		{
-			"skill" : "Git",
-			"icon": "./images/icons/git.png",
-      "score": "7/10",
-      "type": "Other"
-		},
-		{
-			"skill" : "VSCode",
-			"icon": "./images/icons/vscode.png",
-      "score": "7/10",
-      "type": "Other"
-		},
-		{
-			"skill" : "Typescript",
+			"name" : "Typescript",
 			"icon": "./images/icons/typescript.png",
-      "score": "7/10",
-      "type": "Other"
+      "type": "Primary"
+		},
+    {
+      "name" : "Angular",
+      "icon": "./images/icons/angular.png",
+      "type": "Primary"
+    },
+		{
+      "name" : "PrimeNG",
+			"icon": "./images/icons/primeng.png",
+      "type": "Primary"
+		},
+    {
+      "name" : "NestJS",
+      "icon": "./images/icons/nestjs.svg",
+      "type": "Primary"
+    },
+    {
+      "name" : "Jest",
+      "icon": "./images/icons/jest.png",
+      "type": "Primary"
+    },
+		{
+      "name" : "Ionic",
+			"icon": "./images/icons/ionic.png",
+      "type": "Primary"
+		},
+    {
+      "name" : "CSS3",
+      "icon": "./images/icons/css.svg",
+      "type": "Primary"
+    },
+    {
+      "name" : "HTML5",
+      "icon": "./images/icons/html.svg",
+      "type": "Primary"
+    },
+		{
+			"name" : "NodeJS",
+			"icon": "./images/icons/nodejs.svg",
+      "type": "Primary"
+		},
+		{
+			"name" : "Jasmine",
+			"icon": "./images/icons/jasmine.png",
+      "type": "Primary"
+		},    
+		{
+			"name" : "Git",
+			"icon": "./images/icons/git.png",
+      "type": "Primary"
+		},
+		{
+			"name" : "VSCode",
+			"icon": "./images/icons/vscode.png",
+      "type": "Primary"
+		},
+    {
+      "name" : "ReactJS",
+      "icon": "./images/icons/react.svg",
+      "type": "Secondary"
+    },
+		{
+			"name" : "Docker",
+			"icon": "./images/icons/docker.png",
+      "type": "Secondary"
+		},
+		{
+			"name" : "Express",
+			"icon": "./images/icons/express-js.png",
+      "type": "Secondary"
+		},
+		{
+			"name" : "DynamoDB",
+			"icon": "./images/icons/DynamoDB.png",
+      "type": "Secondary"
 		}
 	]
 }
