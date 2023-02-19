@@ -25,12 +25,17 @@ export const ThemeContextProvider = props => {
       inputBorder: 'rgba(0, 216, 255, 0.3)',
 		},
 	}
-	
+  // Uses saved in storage theme if there is one, otherwise it defaults to dark theme
+	let storedTheme = JSON.parse(window.localStorage.getItem('Theme'));
+  if(storedTheme === null) {
+    window.localStorage.setItem('Theme', JSON.stringify(theme.dark.type));
+    storedTheme = JSON.parse(window.localStorage.getItem('Theme'));
+  }
 	const setTheme = type => {
 		setState({...state, theme: type === 'dark' ? theme.light : theme.dark})
 	}
 	const initState = {
-		theme: theme.dark,
+		theme: storedTheme === 'dark' ? theme.dark : theme.light,
 		setTheme: setTheme
 	}
 	const [state, setState] = useState(initState)

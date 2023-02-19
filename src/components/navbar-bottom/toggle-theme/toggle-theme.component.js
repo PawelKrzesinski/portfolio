@@ -1,30 +1,31 @@
-import React, { useContext, useState } from "react"
-import { useEffect } from "react";
-import { ThemeContext } from "../../theme-provider/theme-provider.component";
-import "./toggle-theme.component.css";
+import React, { useContext, useState } from 'react'
+import { useEffect } from 'react';
+import { ThemeContext } from '../../theme-provider/theme-provider.component';
+import './toggle-theme.component.css';
 
 function ToggleTheme() {
-  const [theme, setTheme] = useLocalStorage("theme", "dark")
-  const [isThemePicked, setIsThemePicked] = useState(false);
+
   const state = useContext(ThemeContext)
+  const [theme, setTheme] = useLocalStorage('Theme', state.theme.type)
+  const [isThemePicked, setIsThemePicked] = useState(false);
+
   useEffect(() => {
     if(isThemePicked) return;
+
     setTheme(state.theme.type)
     setIsThemePicked(true);
-  }, [isThemePicked])
-  console.log(state.theme.type)
+  }, [isThemePicked, theme])
+  
 	return (
-    <div className="theme-switch-box">
-		  <div className="theme-switch">
-			  <input type="checkbox" id="switch" onChange={() => { 
+    <div className='theme-switch-box'>
+		  <div className='theme-switch'>
+			  <input type='checkbox' id='switch' onChange={() => { 
           state.setTheme(state.theme.type);
-          setIsThemePicked(false)
-          //console.log('*****', state.theme.type)
-          //setTheme(state.theme.type)
+          setIsThemePicked(false);
           }} />
-			  <label htmlFor="switch"></label>
+			  <label htmlFor='switch'></label>
 		  </div>
-			<p>Dark/Light</p>
+			<p>Light Mode</p>
     </div>
 	)
 }
