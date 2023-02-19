@@ -22,8 +22,8 @@
 
 @media only screen and (min-width: 1200px){
   .projects{
-    grid-template-rows: repeat(auto-fit, 250px);
-		grid-template-columns: repeat(auto-fit, 300px);
-		gap: 10px;
+    grid-template-rows: repeat(auto-fit, 375px);
+		grid-template-columns: repeat(2, 450px);
+		gap: 50px;
   }
 }
