@@ -1,7 +1,7 @@
-import React, { useContext, useState, useEffect } from "react";
-import { ThemeContext } from "../../theme-provider/theme-provider.component";
-import SkillIcon from "./skill-icon/skill-icon.component";
-import "./skill-display.component.css";
+import React, { useContext, useState, useEffect } from 'react';
+import { ThemeContext } from '../../theme-provider/theme-provider.component';
+import SkillIcon from './skill-icon/skill-icon.component';
+import './skill-display.component.css';
 import { MotionAnimate } from 'react-motion-animate';
 
 
@@ -13,10 +13,10 @@ export default function SkillDisplay() {
 	const [state, setState] = useState(initialState);
   
 	const getSkillsData = () => {
-		fetch("skills.json", {
+		fetch('skills.json', {
 			headers: {
-        "Content-Type": "application/json",
-				Accept: "application/json",
+        'Content-Type': 'application/json',
+				Accept: 'application/json',
 			},
 		})
 			.then((res) => {
@@ -45,12 +45,12 @@ export default function SkillDisplay() {
   const types = ['Frontend', 'Backend', 'Testing', 'Other']
 
 	return (
-        <div className="skills-container">
+        <div className='skills-container'>
             {types.map((type, index) => {
               return (
-                <div className="row" key={index} style={styles.row}>
-                  <div className="description" style={styles.desc}>{type}</div>
-                  <div className="skill-icons-box" >
+                <div className='row' key={index} style={styles.row}>
+                  <div className='description' style={styles.desc}>{type}</div>
+                  <div className='skill-icons-box' >
                     {skills.map((skill, index) => {
                       return skill.type === type ?
                       (

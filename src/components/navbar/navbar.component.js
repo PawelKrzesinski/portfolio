@@ -19,21 +19,11 @@ export default function Navbar() {
 				<span className="logo-part1">P</span>
 				<span className="logo-part2">K</span>
 			</a>
-			<a href="#root" style={styles.links}>
-				HOME
-			</a>
-			<a href="#about" style={styles.links}>
-				ABOUT
-			</a>
-			<a href="#projects" style={styles.links}>
-				PROJECTS
-			</a>
-			<a href="#skills" style={styles.links}>
-				SKILLS
-			</a>
-			<a href="#contact" style={styles.links}>
-				CONTACT
-			</a>
+			<a href="#root" style={styles.links}>HOME</a>
+			<a href="#about" style={styles.links}>ABOUT</a>
+			<a href="#projects" style={styles.links}>PROJECTS</a>
+			<a href="#skills" style={styles.links}>SKILLS</a>
+			<a href="#contact" style={styles.links}>CONTACT</a>
 		</div>
 	);
 }

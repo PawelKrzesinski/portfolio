@@ -16,12 +16,12 @@ function NavbarBottom(){
 	}
 
 	return (
-			<div className="navbar-bottom-icons-box" style={styles.component}>
-				<a href="https://www.linkedin.com/in/pawel-krzesinski-7a4a581a1/" target="_blank" rel="noopener noreferrer"  style={styles.component}>
-          <FontAwesomeIcon icon={faLinkedin} className="navbar-bottom-icons"/>
+			<div className='navbar-bottom-icons-box' style={styles.component}>
+				<a href='https://www.linkedin.com/in/pawel-krzesinski-7a4a581a1/' target='_blank' rel='noopener noreferrer'  style={styles.component}>
+          <FontAwesomeIcon icon={faLinkedin} className='navbar-bottom-icons'/>
 				</a>
-				<a href="https://github.com/PawelKrzesinski" target="_blank" rel="noopener noreferrer"  style={styles.component}>
-          <FontAwesomeIcon icon={faGithub} className="navbar-bottom-icons"/>
+				<a href='https://github.com/PawelKrzesinski' target='_blank' rel='noopener noreferrer'  style={styles.component}>
+          <FontAwesomeIcon icon={faGithub} className='navbar-bottom-icons'/>
 				</a>
 				<ToggleTheme />
 	</div>

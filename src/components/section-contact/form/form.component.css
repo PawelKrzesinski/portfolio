@@ -84,8 +84,8 @@
   #contact-form {
     display: grid;
     grid-template-areas: 
-    "name email subject"
-    ". message .";
+    'name email subject'
+    '. message .';
     column-gap: 150px;
     
   }

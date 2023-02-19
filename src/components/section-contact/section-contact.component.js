@@ -5,16 +5,16 @@ import './section-contact.component.css';
 
 export default function SectionContact(props) {
 	const [form, setForm] = useState({
-		name: "",
-		subject: "",
-		email: "",
-		message: "",
+		name: '',
+		subject: '',
+		email: '',
+		message: '',
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [isSuccess, setIsSuccess] = useState('');
+  const [response, setResponse] = useState('');
 	const themeState = useContext(ThemeContext)
-  const spinner = isLoading ? <img src={require("../../images/Spinner-react-biggest.gif")} alt="Loading image" className="spinner"/> : null;
+  const spinner = isLoading ? <img src={require('../../images/Spinner-react-biggest.gif')} alt='Loading image' className='spinner'/> : null;
   const inputFields =  {
     name: useRef(),
     email: useRef(),
@@ -56,22 +56,22 @@ export default function SectionContact(props) {
       const controller = new AbortController();
       const id = setTimeout(() => controller.abort(), timeout)
       try{
-        await fetch("https://pawel-krzesinski.co.uk/api/send", {
+        await fetch('https://pawel-krzesinski.co.uk/api/send', {
           timeout: timeout,
           signal: controller.signal,
-          method: "POST",
+          method: 'POST',
           body: JSON.stringify(form),
             headers: {
-              Accept: "application/json",
-              "Content-type": "application/json",
+              Accept: 'application/json',
+              'Content-type': 'application/json',
             },
           })
           clearTimeout(id);
-          setIsSuccess('Message has been sent!')
+          setResponse('Message has been sent!')
           resetForm();
         } catch (err) {
-          setIsSuccess('Something went wrong. Try again or contact me through krzesinskiwebsites@outlook.com')
-          console.log("Message not sent");
+          setResponse('Something went wrong. Try again or contact me through krzesinskiwebsites@outlook.com')
+          console.log('Message not sent');
           console.error(err);
         }
         setIsSubmitted(false);
@@ -93,24 +93,24 @@ export default function SectionContact(props) {
 	};
 
 	return(
-		<div className="section-5" id="contact" style={styles.section}>
-			<div className="section-slant" style={styles.slant}></div>
+		<div className='section-5' id='contact' style={styles.section}>
+			<div className='section-slant' style={styles.slant}></div>
 			<h3 className='section-title'>CONTACT ME</h3>
 			<Form 
 			onSubmit={handleSubmit}
 			changed={handleInputChange}
-			method="POST"
+			method='POST'
       inputFields={inputFields}
 			styles={styles}
 			/>
 			<button 
-				type="submit" 
-				id="submit" 
-				form="contact-form"
+				type='submit' 
+				id='submit' 
+				form='contact-form'
 				style={styles.submitBtn}
 			>Submit</button>
       {spinner}
-			<p>{isSuccess}</p>
+			<p>{response}</p>
 		</div>
 	)
 }
