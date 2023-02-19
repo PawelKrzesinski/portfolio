@@ -9,16 +9,16 @@
 		align-items: center;
 	}
   .section-4 .section-title{
-    margin-bottom: 50px;
-    padding-bottom: 0;
+    margin-top: 50px;
+
   }
 	.section-4 h4 {
-    margin: 25px 10px;
+    margin: 50px 10px;
     text-align: center;
 		font-weight: 400;
     border-radius: 5px;
     padding: 15px;
-    font-size: 20px;
+    font-size: 18px;
 	}
 
 }

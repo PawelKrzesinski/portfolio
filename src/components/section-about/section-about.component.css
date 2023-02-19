@@ -19,29 +19,17 @@
 	.section-2-content-container{
 		margin-bottom: 100px;
 	}
-	.my-photo {
-		width: 225px;
-		height: 225px;
-		border-radius: 50%;
-		box-shadow: 2px 2px 10px antiquewhite;
-	}
-	.about-me-text-container h2{
-		margin: 25px auto;
-		font-weight: 300;	
+
+	.section-2-content-container h2{
+		margin: 10px auto;
+		font-weight: 400;	
 		font-size: 18px;
 		text-align: center;
-		width: 250px;
-		height: 300px;
-		position: relative;
+		width: 90%;
 		padding: 20px;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-    border-radius: 5px;
-    box-shadow: none !important;
 	}
 	.contact-me-container{
-		margin: 40px auto 0;
+		margin: 80px auto 0;
 	}
 	.contact-me-btn{
 		font-weight: 400;
@@ -54,56 +42,15 @@
 }
 
 @media only screen and (min-width: 425px) {
-  .my-photo{
-    width: 200px;
-		height: 200px;
-	}
-  .contact-me-btn{
-		padding: 12px;
-		font-size: 16px;		
-	}
   .section-2-content-container{
     padding-bottom: 100px;
   }
 }
 
-@media only screen and (min-width: 600px) {
-  .about-me-text-container{
-    margin-top: 25px;
-    display: flex;
-    flex-direction: row;
-  }
-  .about-me-text-container h2{
-    margin: 0 10px;
-    font-size: 12px;
-    min-width: 180px;
-    width: 90%;
-    max-width: 220px;
-    height: 250px;
-  }
-  .contact-me-btn{
-    font-size: 14px;
-    padding: 10px;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .about-me-text-container h2{
-    font-size: 14px;
-    max-width: 220px;
-  }
-}
 
 @media only screen and (min-width: 1024px) {
-	.my-photo{
-		width: 300px;
-		height: 300px;
-		margin-bottom: 50px;
-	}
-  .about-me-text-container h2{
-    font-size: 16px;
-    max-width: 250px;
-    height: 300px;
-    margin: 0 15px;
+  .section-2-content-container {
+    width: 75%;
   }
   .contact-me-btn:hover{
 		color: black !important;
@@ -111,21 +58,16 @@
 	}
 }
 
+@media only screen and (min-width: 1200px){
+  .section-2-content-container h2{
+    font-size: 24px;
+  }
+  .contact-me-btn{
+		font-size: 24px;
+	}
+}
 @media only screen and (min-width: 1440px){
-  .section-2-content-container{
-    margin-top: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  .my-photo{
-    margin: 0 20px;
-  }
-  .about-me-text-container h2 {
-    font-size: 20;
-    height: 300px;
-    max-width: 275px;
-    padding: 30px;
+  .section-2-content-container {
+    width: 60%;
   }
 }
