@@ -23,9 +23,9 @@ export default function SectionSkills(props) {
 	}
 
 	return(
-		<div className="section-4" id="skills" style={styles.section}>
+		<div className='section-4' id='skills' style={styles.section}>
 			<h3 className='section-title'>SKILLS</h3>
-			<div className="section-slant" style={styles.slant}></div>
+			<div className='section-slant' style={styles.slant}></div>
 			<h4 style={styles.text}>
         Currently, I am evolving a SaaS product, working with Angular for the Frontend and NestJS for the Backend.
         I have worked with other frameworks, libraries, mastered various programming paradigms like OOP, FP and created or updated many REST APIs. <br></br><br></br>

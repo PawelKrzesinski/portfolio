@@ -91,7 +91,7 @@
     position: absolute;
     width: 0%;
     height: 2px;
-    background: #00d8ff;
+    background: antiquewhite;
     transition: all 0.3s ease-in-out;
     margin: -10px 0;
   }

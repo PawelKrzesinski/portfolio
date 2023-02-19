@@ -40,10 +40,10 @@ export default function SectionProjects() {
 		
 	}
 	const getProjectsData = () => {
-		fetch("projects.json", {
+		fetch('projects.json', {
 			headers: {
-				"Content-Type": "application/json",
-				Accept: "application/json",
+				'Content-Type': 'application/json',
+				Accept: 'application/json',
 			},
 		})
 			.then((res) => {
@@ -57,10 +57,10 @@ export default function SectionProjects() {
 	useEffect(getProjectsData, [])
 
 	return(
-		<div className="section-3" id="projects" style={styles.section}>
-			<div className="section-slant section-title" style={styles.slant}></div>
-			<h3 className="section-3-subsection section-title">PROJECTS</h3>
-			<div className="projects">
+		<div className='section-3' id='projects' style={styles.section}>
+			<div className='section-slant section-title' style={styles.slant}></div>
+			<h3 className='section-3-subsection section-title'>PROJECTS</h3>
+			<div className='projects'>
 				{projects.map(project => {
 					if(!project.professional){
 						return (

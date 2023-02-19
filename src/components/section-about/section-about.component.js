@@ -28,17 +28,17 @@ export default function SectionAbout(){
 	}
 
 	return (
-		<div className="section-2" id="about" style={styles.section}>
-			<div className="section-slant" style={styles.slant}></div>
+		<div className='section-2' id='about' style={styles.section}>
+			<div className='section-slant' style={styles.slant}></div>
 				<h3 id='about-me' className='section-title'>ABOUT ME</h3>
 			<div className='section-2-content-container'>
-				<img src="./images/myPhoto2.jpg" alt="picture" className="my-photo"/>
-				<div className="about-me-text-container">
+				<img src='./images/myPhoto2.jpg' alt='picture' className='my-photo'/>
+				<div className='about-me-text-container'>
 					<MotionAnimate
-					animation="fadeInUp"
+					animation='fadeInUp'
 					reset={true}
 					speed={0.5}
-					ease="circIn" >
+					ease='circIn' >
 					<h2 style={styles.text}>
 						Hi! I am Pawel, a proactive and responsible Software Developer.
 						Passionate about what I do and always up for a challenge.
@@ -46,27 +46,27 @@ export default function SectionAbout(){
 					</h2>
 					</MotionAnimate>
 					<MotionAnimate
-					animation="fadeInUp"
+					animation='fadeInUp'
 					reset={true}
 					speed={0.5}
 					delay={0.3}
-					ease="circIn" >
+					ease='circIn' >
 					<h2 style={styles.text}>
 						I am experienced in various fantastic technologies like Angular 
 						and Nodejs/Nestjs or testing environments like Jest or Jasmine.
-						You can read more about that in the "Skills" section.
+						You can read more about that in the 'Skills' section.
 					</h2>		
 					</MotionAnimate>
 					<MotionAnimate
-					animation="fadeInUp"
+					animation='fadeInUp'
 					reset={true}
 					speed={0.5}
 					delay={0.6}
-					ease="circIn" >
+					ease='circIn' >
 					<h2 style={styles.text}>
 						If you need a developer, please feel free to contact me and we can discuss potential employment.
 				<div className='contact-me-container'>
-					<a className='contact-me-btn' href="#contact" style={styles.contactBtn}>Contact Me</a>
+					<a className='contact-me-btn' href='#contact' style={styles.contactBtn}>Contact Me</a>
 				</div>
 					</h2>
 					</MotionAnimate>
