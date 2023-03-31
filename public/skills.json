@@ -84,6 +84,11 @@
 			"name" : "DynamoDB",
 			"icon": "./images/icons/DynamoDB.png",
       "type": "Secondary"
+		},
+		{
+			"name" : "MaterialUI",
+			"icon": "./images/icons/materialUI.png",
+      "type": "Secondary"
 		}
 	]
 }
