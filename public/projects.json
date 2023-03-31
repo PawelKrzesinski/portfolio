@@ -13,8 +13,8 @@
 		"title": "To-do App",
 		"image": "./images/projects/todo.png",
 		"github": "https://github.com/PawelKrzesinski/To-do-app",
-		"live": "https://mytodo-app1.glitch.me",
-		"description": "My to-do application using HTML, CSS and Javascript. Add and delete your daily to-do's.",
+		"live": "https://pawelkrzesinski.github.io/To-do-app/",
+		"description": "My to-do application using React and MaterialUI. Add and delete your daily to-do's.",
 		"professional": false,
 		"key": "tdapp"
 	},
