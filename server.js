@@ -13,7 +13,7 @@ const transport =  {
 	host: 'smtp.sendgrid.net',
 	port: 465,
 	auth: {
-		user: creds.USER,
+		user: 'apiKey',
 		pass: creds.PASS
 	}
 }
@@ -41,7 +41,7 @@ router.post('/send', (req, res, next) => {
 		from: payload.name,
 		to: creds.USER,
 		subject: 'New message from Contact Form',
-		text: payload.content
+		text: content
 	}
 
 	transporter.sendMail(mail, (err, data) => {
@@ -57,7 +57,6 @@ router.post('/send', (req, res, next) => {
 	})
 })
 app.use('/api', router);
-
 
 startServer = () => {
 	app.listen(PORT)
