@@ -83,7 +83,6 @@ export default function SectionContact(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitted(true)
-    console.log('Form data: ', form)
   }
 	const resetForm = () => {
     inputFields.email.current.value = '';

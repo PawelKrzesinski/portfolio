@@ -10,8 +10,8 @@ app.use(cors());
 app.use(express.json());
 
 const transport =  {
-	host: 'smtp.office365.com',
-	port: 587,
+	host: 'smtp.sendgrid.net',
+	port: 465,
 	auth: {
 		user: creds.USER,
 		pass: creds.PASS
