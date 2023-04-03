@@ -13,7 +13,7 @@ const transport =  {
 	host: 'smtp.sendgrid.net',
 	port: 465,
 	auth: {
-		user: 'apiKey',
+		user: 'apikey',
 		pass: creds.PASS
 	}
 }
@@ -38,7 +38,7 @@ router.post('/send', (req, res, next) => {
   }
 	const content = `Name: ${payload.name} \nSubject: ${payload.subject} \nE-mail: ${payload.email} \nComment: ${payload.comment}`;
 	const mail = {
-		from: payload.name,
+		from: creds.USER,
 		to: creds.USER,
 		subject: 'New message from Contact Form',
 		text: content
@@ -47,7 +47,8 @@ router.post('/send', (req, res, next) => {
 	transporter.sendMail(mail, (err, data) => {
 		if(err){
 			res.json({
-				status: 'Failed!'
+				status: 'Failed!',
+				message: err.message
 			})
 		} else {
 			res.json({
