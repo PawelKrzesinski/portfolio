@@ -1,6 +1,6 @@
+const sgMail = require('@sendgrid/mail')
 const express = require('express');
 const router = express.Router();
-const nodemailer = require('nodemailer');
 const cors = require('cors');
 const creds = require('./config');
 
@@ -9,53 +9,29 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const transport =  {
-	host: 'smtp.sendgrid.net',
-	port: 465,
-	auth: {
-		user: 'apikey',
-		pass: creds.PASS
-	}
-}
-
-const transporter = nodemailer.createTransport(transport);
-
-transporter.verify((error, success) => {
-	if(error){
-		console.log(error.message);
-    throw new Error(error.message)
-	} else {
-		console.log('Server is ready to take messages !');
-	}
-})
-
 router.post('/send', (req, res, next) => {
-  const payload = {
-    name: req.body.yourName,
-    subject: req.body.subject,
-    email: req.body.email,
-    comment: req.body.comment,
-  }
+	const payload = {
+	  name: req.body.yourName,
+	  subject: req.body.subject,
+	  email: req.body.email,
+	  comment: req.body.comment,
+	}
 	const content = `Name: ${payload.name} \nSubject: ${payload.subject} \nE-mail: ${payload.email} \nComment: ${payload.comment}`;
-	const mail = {
+	sgMail.setApiKey(creds.PASS)
+	const msg = {
 		from: creds.USER,
 		to: creds.USER,
 		subject: 'New message from Contact Form',
-		text: content
+		text: content,
 	}
-
-	transporter.sendMail(mail, (err, data) => {
-		if(err){
-			res.json({
-				status: 'Failed!',
-				message: err.message
-			})
-		} else {
-			res.json({
-				status: 'Success!'
-			})
-		}
-	})
+	sgMail
+		.send(msg)
+		.then(() => {
+			console.log('Email sent')
+		})
+		.catch((error) => {
+			console.error(error)
+		})
 })
 app.use('/api', router);
 
