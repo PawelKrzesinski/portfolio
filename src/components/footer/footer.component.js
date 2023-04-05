@@ -19,7 +19,7 @@ export default function Footer(){
 
 	return(
 		<div className='footer' style={	styles.footer }>
-			<h5>krzesinskiwebsites@outlook.com</h5>
+			<h5>contact@pawel-krzesinski.co.uk</h5>
 			<h6>{copyrights()}</h6>
 		</div>
 	)

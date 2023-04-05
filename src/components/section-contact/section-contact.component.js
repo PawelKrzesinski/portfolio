@@ -70,7 +70,7 @@ export default function SectionContact(props) {
           setResponse('Message has been sent!')
           resetForm();
         } catch (err) {
-          setResponse('Something went wrong. Try again or contact me through krzesinskiwebsites@outlook.com')
+          setResponse('Something went wrong. Try again or contact me contact@pawel-krzesinski.co.uk')
           console.log('Message not sent');
           console.error(err);
         }
