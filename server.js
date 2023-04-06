@@ -30,12 +30,12 @@ transporter.verify((error, success) => {
 
 router.post('/send', (req, res, next) => {
 	const payload = {
-	  name: req.body.yourName,
+	  name: req.body.name,
 	  subject: req.body.subject,
 	  email: req.body.email,
-	  comment: req.body.comment,
+	  message: req.body.message,
 	}
-	const content = `Name: ${payload.name} \nSubject: ${payload.subject} \nE-mail: ${payload.email} \nComment: ${payload.comment}`;
+	const content = `Name: ${payload.name} \nSubject: ${payload.subject} \nE-mail: ${payload.email} \nComment: ${payload.message}`;
 	const mail = {
 		from: creds.USER,
 		to: creds.USER,
